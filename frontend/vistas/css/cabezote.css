@@ -1,0 +1,263 @@
+/*=============================================
+TOP
+=============================================*/
+
+#top ul{
+	
+}
+
+#top ul li{
+	display:inline;
+	line-height:40px;
+	margin:0px 10px;
+	color:white;
+}
+
+.social ul li a i{
+	font-size:28px;
+	margin:2 4px;
+	-webkit-box-shadow: -15px 13px 16px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: -15px 13px 16px 0px rgba(0,0,0,0.75);
+box-shadow: -15px 13px 16px 0px rgba(0,0,0,0.75);
+}
+
+.introTitle{
+	font-size: 30px;
+	color: #FFFFFF;
+	text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #FF2D95 0px 0px 20px, #FF2D95 0px 0px 30px, #FF2D95 0px 0px 40px, #FF2D95 0px 0px 50px, #FF2D95 0px 0px 75px;
+	font-family: "Snell Roundhand", cursive, serif;
+}
+
+.social {
+	margin-top:  10px;
+}
+
+.imgLoge{
+		padding-bottom: 500px;
+	-webkit-box-shadow: 0px 39px 23px -18px rgba(43,29,43,1);
+-moz-box-shadow: 0px 39px 23px -18px rgba(43,29,43,1);
+box-shadow: 0px 39px 23px -18px rgba(43,29,43,1);
+
+}
+
+
+
+
+/*=============================================
+HEADER
+=============================================*/
+
+header #btnCategorias{
+	margin:20px 0px;
+	border-radius: 6px;
+}
+
+
+header #btnCategorias p{
+	line-height:40px;
+	margin-bottom:0px;
+}
+
+
+
+
+header #btnCategorias p span{
+	cursor: pointer;
+}
+
+header #buscador{
+	margin:20px 280px;
+	border-radius: 6px;
+}
+
+header #buscador input{
+	padding:18px;
+	margin: 2px;
+	border-radius:6px;
+}
+
+header #buscador button{
+	padding:10px;
+	border:0px solid silver;
+	border-radius: 50%;
+	width: 40px;
+	margin-left: 4px;
+
+}
+
+header #carrito{
+	margin:20px 120px;
+}
+
+header #carrito button{
+	padding:9px 15px;
+	border:3px solid black;
+	border-radius:15px;
+}
+
+header #carrito p{
+	padding:4px;
+	padding-left:60px;
+	border:0px solid #aaa;
+	font-size:12px;
+	border:3px solid black;
+	border-radius:15px;
+}
+
+header #categorias{
+	display:none;
+	margin-top:-10px;
+	position: relative;
+	padding-bottom:20px;
+	border-radius:15px;
+	margin-bottom: 10px;
+}
+
+header #categorias h4{
+	margin-top:20px;
+	margin-bottom:-10px;
+}
+
+header #categorias hr{
+	border:1px solid rgba(255,255,255,.3);
+}
+
+
+/*=============================================
+ESCRITORIO GRANDE (LG revisamos en 1366px en adelante)
+=============================================*/
+
+@media (min-width:1200px){
+
+	/*=============================================
+	HEADER
+	=============================================*/
+
+	header #logotipo img{
+		padding:20px 60px;
+		padding-left:0px;
+	}
+
+	header #carrito{
+		padding-left:100px;
+	}
+
+}
+
+/*=============================================
+ESCRITORIO MEDIANO O TABLET HORIZONTAL (MD revisamos en 1024px)
+=============================================*/
+
+@media (max-width:1199px) and (min-width:992px){
+
+	/*=============================================
+	HEADER
+	=============================================*/
+
+	header #logotipo img{
+		padding:25px 60px;
+		padding-left:0px;
+	}
+
+	header #carrito{
+		padding-left:70px;
+	}
+
+}
+
+/*=============================================
+ESCRITORIO PEQUEÑO O TABLET VERTICAL (SM revisamos en 768px)
+=============================================*/
+
+@media (max-width:991px) and (min-width:768px){
+
+	/*=============================================
+	HEADER
+	=============================================*/
+
+	header #buscador{
+	margin:20px 0px;
+	border-radius: 6px;
+	}
+
+	header #carrito{
+	margin:20px 0px;
+	}
+
+
+
+
+	header #logotipo img{
+		padding:30px 0px;
+	}
+
+	header #carrito{
+		padding-left:55px;
+	}
+
+	header #carrito p{
+		display:none;
+	}
+
+}
+
+/*=============================================
+MOVIL (XS revisamos en 320px)
+=============================================*/
+
+@media (max-width:767px){
+
+	/*=============================================
+	TOP
+	=============================================*/
+
+	header #buscador{
+	margin:20px 0px;
+	border-radius: 6px;
+}
+
+	#top ul{
+		text-align: center;
+	}
+
+	#top #registro{
+		border-top:8px solid #222;
+	}
+
+	.registro{
+
+		align-content: center;
+		padding-left: 40px;
+		margin: 2px;
+
+	}
+	
+
+
+
+
+
+
+	
+	/*=============================================
+	HEADER
+	=============================================*/
+
+	header #logotipo img{
+		padding:30px;
+		padding-bottom:10px;
+	}
+
+	header #categorias{
+		margin-bottom:10px;
+	}
+
+	header #buscador{
+		margin-bottom:10px;
+	}
+
+	header #carrito{
+		margin:0px;
+	}
+	
+}

@@ -50,6 +50,9 @@ HEADER
 header #btnCategorias{
 	margin:20px 0px;
 	border-radius: 6px;
+	-webkit-box-shadow: -8px 12px 31px 5px rgba(0,0,0,0.75);
+	-moz-box-shadow: -8px 12px 31px 5px rgba(0,0,0,0.75);
+	box-shadow: -8px 12px 31px 5px rgba(0,0,0,0.75);
 }
 
 
@@ -82,6 +85,9 @@ header #buscador button{
 	border-radius: 50%;
 	width: 40px;
 	margin-left: 4px;
+	-webkit-box-shadow: -8px 12px 31px 5px rgba(0,0,0,0.75);
+	-moz-box-shadow: -8px 12px 31px 5px rgba(0,0,0,0.75);
+	box-shadow: -8px 12px 31px 5px rgba(0,0,0,0.75);
 
 }
 

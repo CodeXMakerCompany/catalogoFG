@@ -44,7 +44,7 @@ class ModeloProductos{
 
 		$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
 
-		$stmt -> bindParam(":".$item, $valor, PDO::PARAM_INT);
+		$stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
 
 		$stmt -> execute();
 
@@ -60,18 +60,53 @@ class ModeloProductos{
 	MOSTRAR PRODUCTOS
 	=============================================*/
 
-	static public function mdlMostrarProductos($tabla, $ordenar){
+	static public function mdlMostrarProductos($tabla, $ordenar, $item, $valor){
 
-			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla ORDER BY $ordenar LIMIT 5");
+		if($item != null){
+
+			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item ORDER BY $ordenar LIMIT 3");
+
+			$stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
 
 			$stmt -> execute();
 
 			return $stmt -> fetchAll();
+
+
+		}else {
+
+			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla ORDER BY $ordenar LIMIT 6");
+
+			$stmt -> execute();
+
+			return $stmt -> fetchAll();
+
+		}
 
 			$stmt -> close();
 
 			$stmt = null;
 	}
 
+	/*=============================================
+	MOSTRAR INFO-PRODUCTO
+	=============================================*/
+
+	static public function mdlMostrarInfoProducto($tabla, $item, $valor){
+
+		$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
+
+		$stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
+
+		$stmt -> execute();
+
+		/*solo retorna la ruta por eso solo fetch y no fetch all*/
+		return $stmt -> fetch();
+
+		$stmt -> close();
+
+		$stmt = null;
+
+	}
 
 }

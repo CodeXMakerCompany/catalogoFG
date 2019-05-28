@@ -35,18 +35,18 @@ $(window).scroll(function(){
 
 	var scrollY = window.pageYOffset;
 
-	if (window.matchMedia("(min-width:768px)").matches) {
+	if(window.matchMedia("(min-width:768px)").matches){
 
-			if (scrollY < ($(".banner").offset().top)){
+		if(scrollY < ($(".banner").offset().top)+190){
 
-			$(".banner img").css({"margin-top":-scrollY/2+"px"})
+			$(".banner img").css({"margin-top":-scrollY/4+"px"})
+
 		}else{
 
-			scrollY=0;
+			scrollY = 0;
 		}
 
-	}
-
+	}	
 	
 })
 

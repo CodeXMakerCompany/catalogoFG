@@ -41,6 +41,9 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Condensed" rel="stylesheet">
 
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+
 	<!--=====================================
 	=           HOJAS DE ESTILO PERSONALIZADAS         =
 	======================================-->
@@ -96,6 +99,7 @@ CONTENIDO DINÁMICO
 
 $rutas = array();
 $ruta = null;
+$infoProducto = null;
 
 if(isset($_GET["ruta"])){
 
@@ -133,6 +137,18 @@ if(isset($_GET["ruta"])){
 	}
 
 	/*=============================================
+	URL'S AMIGABLES DE PRODUCTOS
+	=============================================*/
+
+	$rutaProductos = ControladorProductos::ctrMostrarInfoProducto($item, $valor);
+
+	if($rutas[0] == $rutaProductos["ruta"]){
+
+			$infoProducto = $rutas[0];
+
+		}
+
+	/*=============================================
 	LISTA BLANCA DE URL'S AMIGABLES
 	=============================================*/
 
@@ -140,6 +156,10 @@ if(isset($_GET["ruta"])){
 
 		include "modulos/productos.php";
 
+
+	}else if ($infoProducto !=null) {
+		
+			include "modulos/infoproducto.php";
 
 	}else{
 

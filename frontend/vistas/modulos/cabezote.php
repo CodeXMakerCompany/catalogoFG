@@ -48,7 +48,7 @@ TOP
 			SOCIAL
 			======================================-->
 
-			<div class="col-lg-9 col-md-9 col-sm-8 col-xs-12 social">
+			<div class="col-lg-9 col-md-9 col-sm-8 col-xs-12 social animated  bounceInLeft slow">
 				
 				<ul>	
 
@@ -81,7 +81,7 @@ TOP
 			Logo
 			======================================-->
 
-			<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 registro">
+			<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 registro animated rotateIn">
 				
 			
 

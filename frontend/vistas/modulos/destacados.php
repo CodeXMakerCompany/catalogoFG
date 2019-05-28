@@ -14,7 +14,7 @@ BANNER
 
 	<img src="vistas/img/plantilla/bannerBegin.png" class="img-responsive" width="100%">	
 
-	<div class="textoBanner textoDer">
+	<div class="textoBanner textoDer opcAnimation animated tada">
 		
 		<h1 style="color:#fff">OFERTAS ESPECIALES</h1>
 
@@ -37,12 +37,16 @@ MOSTRAR PRODUCTOS
 $titulosModulos = array("LO MÁS VENDIDO","LO MÁS VISTO"); 
 
 $rutaModulos = array("lo-mas-vendido","lo-mas-visto");
+	
 
 if ($titulosModulos[0] == "LO MÁS VENDIDO" ) {
 	
 	$ordenar = "ventas";
 
-	$ventas = ControladorProductos::ctrMostrarProductos($ordenar);
+	$item = null;
+	$valor = null;
+
+	$ventas = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor);
 
 }
 
@@ -50,7 +54,10 @@ if ($titulosModulos[1] == "LO MÁS VISTO" ) {
 	
 	$ordenar = "vistas";
 
-	$vistas = ControladorProductos::ctrMostrarProductos($ordenar);
+	$item = null;
+	$valor = null;
+
+	$vistas = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor);
 
 
 }
@@ -98,7 +105,7 @@ for ($i=0; $i < count($titulosModulos); $i++) {
 
 			<div class="col-sm-6 col-xs-12">
 					
-					<h1><small class="titlesDecor"> '.$titulosModulos[$i].' </small></h1>
+					<h1 class="opcAnimation animated heartBeat"><small class="titlesDecor"> '.$titulosModulos[$i].' </small></h1>
 
 			</div>
 
@@ -124,7 +131,7 @@ for ($i=0; $i < count($titulosModulos); $i++) {
 
 				</div>
 
-				<div class="col-xs-12">
+				<div class="col-xs-12 animated fadeInLeft delay-2s slow">
 
 				<div class="swiper-container">
     <div class="swiper-wrapper">';
@@ -152,18 +159,41 @@ foreach ($modulos[$i] as $key => $value) {
 						
 						<a href="'.$value["ruta"].'" class="pixelProducto">
 							
-							<span style="color: white;">'.$value["titulo"].'</span><br>
+							<span style="color: white;">'.$value["titulo"].'</span>
 
-							<span class="label label-warning fontSize">Nuevo</span> 
+							<br>';
+								
+								if ($value["nuevo"] != 0) {
 
-							<span class="label label-warning fontSize">40% off</span>
+									echo '<span class="label label-warning fontSize">Nuevo</span> ' ;
+								}
 
-							<strong class="oferta"> USD $29 </strong> 
-							<strong>now for $'.$value["precio"].'</strong>
+								if ($value["oferta"] != 0) {
 
-							
+									echo '<span class="label label-warning fontSize">'.$value["descuentoOferta"].'% off</span>';		
 
-						</a>	
+								}
+
+								
+								if ($value["precio"] == 0) {
+								
+									echo '<strong>	articulo gratuito </strong>';
+
+								}else {
+
+									if ($value["oferta"] !=0) {
+										
+										echo '<strong> USD $ '.$value["precio"].' </strong> 
+
+										<strong class="oferta"> USD $ '.$value["precioOferta"].' </strong>';
+									}else{
+
+										echo '<strong> USD $ '.$value["precio"].' </strong>';
+									}
+
+								}
+
+						echo '</a>	
 
 					</small>			
 
@@ -176,15 +206,28 @@ foreach ($modulos[$i] as $key => $value) {
 							
 							<i class="fa fa-heart" aria-hidden="true"></i>
 
-						</button>
+						</button> ';
 
-						<button type="button" class="btn btn-default btn-xs agregarCarrito" idProducto="404" imagen="http://localhost/backend/vistas/img/productos/cursos/curso03.jpg" titulo="Curso de jQuery" precio="10" tipo="virtual" peso="0"  data-toggle="tooltip" title="Agregar al carrito de compras">
+						if ($value["oferta"] !=0) {
+							
+							echo '<button type="button" class="btn btn-default btn-xs agregarCarrito" idProducto="'.$value["id"].'" imagen="'.$servidor.$value["portada"].'" titulo="'.$value["titulo"].'" precio="'.$value["precioOferta"].'" peso="'.$value["peso"].'"  data-toggle="tooltip" title="Agregar al carrito de compras">
 							
 							<i class="fa fa-shopping-cart" aria-hidden="true"></i>
 
-						</button>
+						</button>';
 
-						<a href="#" class="pixelProducto">
+						}else{
+
+							echo '<button type="button" class="btn btn-default btn-xs agregarCarrito" idProducto="'.$value["id"].'" imagen="'.$servidor.$value["portada"].'" titulo="'.$value["titulo"].'" precio="'.$value["precio"].'" peso="'.$value["peso"].'"  data-toggle="tooltip" title="Agregar al carrito de compras">
+							
+							<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+
+						</button>';
+						
+						}
+
+
+						echo '<a href="'.$value["ruta"].'" class="pixelProducto">
 						
 							<button type="button" class="btn btn-default btn-xs" data-toggle="tooltip" title="Ver producto">
 								

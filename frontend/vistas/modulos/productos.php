@@ -20,10 +20,12 @@
 				}
 
 				$ordenar = "id";
+				$base = 0;
+				$tope = 8;
 
-				$productos = ControladorProductos::ctrMostrarProductos($ordenar, $item2, $valor2);
+				$productos = ControladorProductos::ctrMostrarProductos($ordenar, $item2, $valor2, $base, $tope);
 
-				var_dump($productos);
+				var_dump(count($productos));
 
 				if (!$productos) {
 					

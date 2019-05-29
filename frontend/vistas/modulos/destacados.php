@@ -146,7 +146,6 @@ foreach ($modulos[$i] as $key => $value) {
 				<div class="imgBx">
 
 
-
       		<a href="'.$value["ruta"].'">
 
       		<img src="'.$servidor.$value["portada"].'" class="img-responsive">

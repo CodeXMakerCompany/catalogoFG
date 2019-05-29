@@ -12,6 +12,11 @@ BANNER
 	overflow:hidden;
 }
 
+figure {
+	width: 100%;
+	margin: -0.10%;
+}
+
 .banner .textoBanner{
 	position:absolute;
 	font-family: 'Ubuntu Condensed', sans-serif;
@@ -88,8 +93,40 @@ BARRA PRODUCTOS
 	margin-left:10px;
 }
 
+#team .card:hover {
+	background: #e73827;
+	color: #fff;
+	background: linear-gradient(45deg, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%);
+	-webkit-box-shadow: -3px 9px 14px 0px rgba(3,3,3,1);
+	-moz-box-shadow: -3px 9px 14px 0px rgba(3,3,3,1);
+	box-shadow: -3px 9px 14px 0px rgba(3,3,3,1);
+	transition: all 2s ease;
 
-	/*=============================================
+}
+
+
+
+
+
+#team .card:hover span{
+	color: white;
+	background: #7723af;
+	background: -moz-linear-gradient(45deg, #7723af 1%, #45177c 43%, #151787 90%);
+	background: -webkit-linear-gradient(45deg, #7723af 1%,#45177c 43%,#151787 90%);
+	background: linear-gradient(45deg, #7723af 1%,#45177c 43%,#151787 90%);
+	transition: all 2s ease;
+}
+
+#team .card:hover strong{
+
+	color: #4dff88;
+	transition: all 2s ease;
+}
+
+
+
+
+/*=============================================
 swiper
 =============================================*/
 

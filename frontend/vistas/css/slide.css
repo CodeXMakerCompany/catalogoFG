@@ -18,17 +18,21 @@ SLIDE
 	width:400%;
 	clear:both;
 	display: table;
+
+
 }
 
 #slide ul li{
 	position: relative;
 	float:left;
 	width:25%;
+
 }	
 
 #slide ul li img{
 	width:100%;
 	height: 250px;
+	padding: 1.2%;
 }
 
 #slide .slideOpcion1 img{

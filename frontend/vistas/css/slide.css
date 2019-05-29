@@ -28,6 +28,7 @@ SLIDE
 
 #slide ul li img{
 	width:100%;
+	height: 250px;
 }
 
 #slide .slideOpcion1 img{
@@ -115,7 +116,7 @@ PAGINACIÓN
 	width:100%;
 	margin:auto;
 	text-align: center;
-	line-height: 40px;
+	line-height: 30px;
 	font-size:12px;
 	bottom:0px;
 	left:0px;
@@ -132,6 +133,10 @@ PAGINACIÓN
 	color: black;
 
 	text-shadow:0px 0px 5px #333;
+}	
+
+#slide #paginacion li:hover{
+	color: magenta;
 }
 
 #slide #paginacion li:first-child{

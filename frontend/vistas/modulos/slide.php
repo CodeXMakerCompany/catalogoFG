@@ -1,53 +1,14 @@
- <!-- Indicators -->
-  <ul class="carousel-indicators">
-    <li data-target="#demo" data-slide-to="0" class="active"></li>
-    <li data-target="#demo" data-slide-to="1"></li>
-    <li data-target="#demo" data-slide-to="2"></li>
-  </ul>
 <?php 
 	
 	$servidor = Ruta::ctrRutaServidor();
 
-	$slide = ControladorSlide::ctrMostrarSlide();
-
-echo'<div id="demo" class="carousel slide" data-ride="carousel">
-<!-- The slideshow -->
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="http://localhost/catalogoFig/backend/vistas/img/productos/figuras/Alphamax-Skytube-Alice-figuras-de-Anime-japon-s-Sexy-juguetes-adultos-acci-n-juguete-colecci-n.jpg_640x640.jpg" alt="Los Angeles">
-    </div>
-    <div class="carousel-item">
-      <img src="http://localhost/catalogoFig/backend/vistas/img/productos/figuras/Alphamax-Skytube-Alice-figuras-de-Anime-japon-s-Sexy-juguetes-adultos-acci-n-juguete-colecci-n.jpg_640x640.jpg" alt="Chicago">
-    </div>
-    <div class="carousel-item">
-      <img src="http://localhost/catalogoFig/backend/vistas/img/productos/figuras/Alphamax-Skytube-Alice-figuras-de-Anime-japon-s-Sexy-juguetes-adultos-acci-n-juguete-colecci-n.jpg_640x640.jpg" alt="New York">
-    </div>
-  </div>
-</div>';
  ?>
-
-
-
- 
-<br>
-  
-
-  <!-- Left and right controls -->
-  <a class="carousel-control-prev" href="#demo" data-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </a>
-  <a class="carousel-control-next" href="#demo" data-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </a>
-
-
 <!--=====================================
 SLIDESHOW  
 ======================================-->
 
 <div class="container-fluid" id="slide">
-	
-	<div class="row">
+
 		
 		<!--=====================================
 		DIAPOSITIVAS
@@ -74,7 +35,7 @@ SLIDESHOW
 					
 					<img class="imgProducto" src="'.$servidor.$value["imgProducto"].'" style="top:'.$estiloImgProducto["top"].'; right:'.$estiloImgProducto["right"].'; width:'.$estiloImgProducto["width"].'">
 
-					<div class="textosSlide" style="top:20%; left:10%; width:40%">
+					<div class="textosSlide" style="top:0%; left:10%; width:40%">
 						
 						<h1 style="color:'.$titulo1["color"].'">'.$titulo1["texto"].'</h1>
 
@@ -97,8 +58,6 @@ SLIDESHOW
 			</li>';
 
 			}
-
-
 
 			 ?>		
 
@@ -124,7 +83,7 @@ SLIDESHOW
 
 	</div>
 
-</div>
+
 
 
 	<div align="center">

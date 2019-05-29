@@ -69,7 +69,7 @@ header #btnCategorias p span{
 }
 
 header #buscador{
-	margin:20px 280px;
+	margin:20px 200px;
 	border-radius: 6px;
 }
 
@@ -88,6 +88,7 @@ header #buscador button{
 	-webkit-box-shadow: -8px 12px 31px 5px rgba(0,0,0,0.75);
 	-moz-box-shadow: -8px 12px 31px 5px rgba(0,0,0,0.75);
 	box-shadow: -8px 12px 31px 5px rgba(0,0,0,0.75);
+
 
 }
 
@@ -117,6 +118,11 @@ header #categorias{
 	padding-bottom:20px;
 	border-radius:15px;
 	margin-bottom: 10px;
+}
+
+header #categorias>div {
+  display: inline-flex;
+  flex-direction: column;
 }
 
 header #categorias h4{

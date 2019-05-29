@@ -26,6 +26,8 @@ BANNER
 
 </figure>
 
+
+
 <!--=====================================
 MOSTRAR PRODUCTOS
 ======================================-->
@@ -74,21 +76,21 @@ for ($i=0; $i < count($titulosModulos); $i++) {
 			<div class="container">
 				
 				<div class="row">
-					
+			
 					<div class="col-xs-12 organizarProductos">
 
-						<div class="btn-group pull-right">
+						
 
 							 <button type="button" class="btn btn-default btnGuia" id="btnGuia1'.$i.'">
-							 	
+						 	
 								<i class="fa fa-th" aria-hidden="true"></i>  
 
-								<span class="col-xs-0 pull-right"> GUÍA </span>
+								<span class="col-xs-0 pull-right"> INFO </span>
 
 							 </button>
 
-							
-						</div>		
+	
+					
 
 					</div>
 
@@ -102,21 +104,21 @@ for ($i=0; $i < count($titulosModulos); $i++) {
 	
 			<div class="container">
 		
-		<div class="row">
+		
 
-		<div class="col-xs-12 tituloDestacado">
+		<div class="col-xs-12 tituloDestacado text-center">
 
-			<div class="col-sm-6 col-xs-12">
+			<div class="col-sm-12 col-xs-12">
 					
 					<h1 class="opcAnimation animated heartBeat"><small class="titlesDecor"> '.$titulosModulos[$i].' </small></h1>
 
-			</div>
+			
 
-			<div class="col-sm-6 col-xs-12">
+			<div class="col-sm-12 col-xs-12 paddingBut">
 					
 					<a href="'.$rutaModulos[$i].'">
 						
-						<button class="btn btn-default backColor pull-right">
+						<button class="btn btn-default backColor">
 							
 							VER MÁS <span class="fa fa-chevron-right"></span>
 
@@ -130,7 +132,6 @@ for ($i=0; $i < count($titulosModulos); $i++) {
 
 			<div class="clearfix"></div>
 
-			<hr>
 
 				</div>
 
@@ -168,12 +169,12 @@ foreach ($modulos[$i] as $key => $value) {
 								
 								if ($value["nuevo"] != 0) {
 
-									echo '<span class="label label-warning fontSize">Nuevo</span> ' ;
+									echo '<span class="badge badge-success">Nuevo</span> ' ;
 								}
 
 								if ($value["oferta"] != 0) {
 
-									echo '<span class="label label-warning fontSize">'.$value["descuentoOferta"].'% off</span>';		
+									echo '<span class="badge badge-warning">'.$value["descuentoOferta"].'% off</span>';		
 
 								}
 
@@ -186,7 +187,8 @@ foreach ($modulos[$i] as $key => $value) {
 
 									if ($value["oferta"] !=0) {
 										
-										echo '<strong> USD $ '.$value["precio"].' </strong> 
+										echo '<strong>  '.$value["precio"].' USD $</strong> 
+										<br>
 
 										<strong class="oferta"> USD $ '.$value["precioOferta"].' </strong>';
 									}else{
@@ -207,7 +209,7 @@ foreach ($modulos[$i] as $key => $value) {
 						
 						<button type="button" class="btn btn-default btn-xs deseos" idProducto="'.$value["id"].'" data-toggle="tooltip" title="Agregar a mi lista de deseos">
 							
-							<i class="fa fa-heart" aria-hidden="true"></i>
+							<i class="fa fa-heart" style="color:white;" aria-hidden="true"></i>
 
 						</button> ';
 
@@ -215,7 +217,7 @@ foreach ($modulos[$i] as $key => $value) {
 							
 							echo '<button type="button" class="btn btn-default btn-xs agregarCarrito" idProducto="'.$value["id"].'" imagen="'.$servidor.$value["portada"].'" titulo="'.$value["titulo"].'" precio="'.$value["precioOferta"].'" peso="'.$value["peso"].'"  data-toggle="tooltip" title="Agregar al carrito de compras">
 							
-							<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+							<i class="fa fa-shopping-cart" style="color:white;"  aria-hidden="true"></i>
 
 						</button>';
 
@@ -223,7 +225,7 @@ foreach ($modulos[$i] as $key => $value) {
 
 							echo '<button type="button" class="btn btn-default btn-xs agregarCarrito" idProducto="'.$value["id"].'" imagen="'.$servidor.$value["portada"].'" titulo="'.$value["titulo"].'" precio="'.$value["precio"].'" peso="'.$value["peso"].'"  data-toggle="tooltip" title="Agregar al carrito de compras">
 							
-							<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+							<i class="fa fa-shopping-cart" style="color:white;" aria-hidden="true"></i>
 
 						</button>';
 						
@@ -234,7 +236,7 @@ foreach ($modulos[$i] as $key => $value) {
 						
 							<button type="button" class="btn btn-default btn-xs" data-toggle="tooltip" title="Ver producto">
 								
-								<i class="fa fa-eye" aria-hidden="true"></i>
+								<i class="fa fa-eye" style="color:white;"  aria-hidden="true"></i>
 
 							</button>	
 						

@@ -140,7 +140,7 @@ HEADER
 				BOTÓN CATEGORÍAS
 				======================================-->
 
-				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 backColor" id="btnCategorias">
+				<div class="col-lg-4 col-md-6 col-sm-4 col-xs-12 backColor" id="btnCategorias">
 					
 					<p>CATEGORÍAS
 					
@@ -156,7 +156,7 @@ HEADER
 				BUSCADOR
 				======================================-->
 				
-				<div class="input-group col-lg-8 col-md-8 col-sm-8 col-xs-12" id="buscador">
+				<div class="input-group col-lg-10 col-md-10 col-sm-8 col-xs-12" id="buscador">
 					
 					<input type="search" name="buscar" class="form-control" placeholder="Buscar...">	
 

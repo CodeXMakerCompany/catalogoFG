@@ -59,3 +59,23 @@ $(function(){
 });
 
 /*=====  End of Efectos con el scroll  ======*/
+
+/*=====================================
+=            migas de pan            =
+=====================================*/
+
+var pagActiva = $(".pagActiva").html();
+
+if (pagActiva != null) {
+
+	var regPagActiva = pagActiva.replace(/-/g, " ");
+
+	$(".pagActiva").html(regPagActiva);
+	
+}
+
+
+
+
+/*=====  End of migas de pan  ======*/
+

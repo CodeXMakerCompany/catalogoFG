@@ -41,7 +41,7 @@ $titulosModulos = array("LO MÁS VENDIDO","LO MÁS VISTO");
 $rutaModulos = array("lo-mas-vendido","lo-mas-visto");
 
 $base = 0;
-$tope = 5;
+$tope = 6;
 	
 
 if ($titulosModulos[0] == "LO MÁS VENDIDO" ) {
@@ -50,8 +50,9 @@ if ($titulosModulos[0] == "LO MÁS VENDIDO" ) {
 
 	$item = null;
 	$valor = null;
+	$modo = "DESC";
 
-	$ventas = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $base, $tope);
+	$ventas = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $base, $tope, $modo);
 
 }
 
@@ -61,8 +62,9 @@ if ($titulosModulos[1] == "LO MÁS VISTO" ) {
 
 	$item = null;
 	$valor = null;
+	$modo = "DESC";
 
-	$vistas = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $base, $tope);
+	$vistas = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $base, $tope, $modo);
 
 
 }

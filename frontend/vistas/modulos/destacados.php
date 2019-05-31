@@ -2,31 +2,31 @@
 	
 	$servidor = Ruta::ctrRutaServidor();
 
- ?>
+	$ruta = "sin-categoria";
 
-<!--=====================================
+	$banner = ControladorProductos::ctrMostrarBanner($ruta);
+
+/*--=====================================
 BANNER
-======================================-->
+======================================-*/
 
+	echo '<figure class="banner">
 
+			<img src="'.$servidor.$banner["img"].'" class="img-responsive" width="100%">	
 
-<figure class="banner">
+			<div class="textoBanner textoDer opcAnimation animated tada">
+				
+				<h1 style="color:#0ff">'.$banner["titulo1"].'</h1>
 
-	<img src="vistas/img/plantilla/bannerBegin.png" class="img-responsive" width="100%">	
+				<h2 style="color:#fff"><strong>'.$banner["titulo2"].'</strong></h2>
 
-	<div class="textoBanner textoDer opcAnimation animated tada">
-		
-		<h1 style="color:#fff">OFERTAS ESPECIALES</h1>
+				<h3 style="color:#fff">'.$banner["titulo3"].'</h3>
 
-		<h2 style="color:#fff"><strong>15% off</strong></h2>
+			</div>
 
-		<h3 style="color:#fff">Termina el 31 de Septiembre</h3>
+		</figure>';
 
-	</div>
-
-</figure>
-
-
+ ?>
 
 <!--=====================================
 MOSTRAR PRODUCTOS

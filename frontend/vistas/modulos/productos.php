@@ -3,30 +3,33 @@
 	$servidor = Ruta::ctrRutaServidor();
 	$url = Ruta::ctrRuta();
 
+	$ruta = "sin-categoria";
+
+	$banner = ControladorProductos::ctrMostrarBanner($ruta);
+
+/*--=====================================
+BANNER
+======================================-*/
+
+	echo '<figure class="banner">
+
+			<img src="'.$servidor.$banner["img"].'" class="img-responsive" width="100%">	
+
+			<div class="textoBanner textoDer opcAnimation animated tada">
+				
+				<h1 style="color:#0ff">'.$banner["titulo1"].'</h1>
+
+				<h2 style="color:#fff"><strong>'.$banner["titulo2"].'</strong></h2>
+
+				<h3 style="color:#fff">'.$banner["titulo3"].'</h3>
+
+			</div>
+
+		</figure>';
+
  ?>
 
 
-<!--=====================================
-BANNER
-======================================-->
-
-
-
-<figure class="banner">
-
-	<img src="vistas/img/plantilla/bannerBegin.png" class="img-responsive" width="100%">	
-
-	<div class="textoBanner textoDer opcAnimation animated tada">
-		
-		<h1 style="color:#fff">OFERTAS ESPECIALES</h1>
-
-		<h2 style="color:#fff"><strong>15% off</strong></h2>
-
-		<h3 style="color:#fff">Termina el 31 de Septiembre</h3>
-
-	</div>
-
-</figure>
 
 <!--=====================================
 BARRA PRODUCTOS
@@ -98,6 +101,28 @@ LISTAR PRODUCTOS
 
 
 			if (isset($rutas[1])) {
+				/*si se esta usando rutas 2 es por que vienen los valores de recientes o antiguos*/
+
+				if (isset($rutas[2])) {
+					
+					if ($rutas[2] == "antiguos") {
+
+						$modo = "ASC";
+
+						$_SESSION["ordenar"] = $modo;
+
+					}else{
+
+						$modo = "DESC";
+
+						$_SESSION["ordenar"] = $modo;
+
+					}
+				}else{
+
+					$modo = $_SESSION["ordenar"];
+
+				}
 					
 					$base = ($rutas[1] - 1)*12;
 					$tope = 12;
@@ -107,6 +132,7 @@ LISTAR PRODUCTOS
 					$rutas[1] = 1;
 					$base = 0;
 					$tope = 12;
+					$modo = "DESC";
 
 				}	
 

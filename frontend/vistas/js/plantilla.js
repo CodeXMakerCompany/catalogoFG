@@ -3,12 +3,14 @@ PLANTILLA
 =============================================*/
 
 //Herramienta tooltip
+/*=====  la ruta oculta es importante para los archivos ajax y direcciones  ======*/
+var rutaOculta = $("#rutaOculta").val();
 
 $('[data-toggle="tooltip"]').tooltip();
 
 $.ajax({
 
-	url:"ajax/plantilla.ajax.php",
+	url:rutaOculta+"ajax/plantilla.ajax.php",
 	success:function(respuesta){
 
 		var colorFondo = JSON.parse(respuesta).colorFondo;
@@ -77,5 +79,19 @@ if (pagActiva != null) {
 
 
 
-/*=====  End of migas de pan  ======*/
+
+
+/*=====================================
+=            ENLACES PAGINACION       =
+=====================================*/
+
+var url = window.location.href;
+
+var indice = url.split("/");
+
+
+
+$("#item"+indice.pop()).addClass("active");
+
+
 

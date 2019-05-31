@@ -19,6 +19,8 @@
 
 	<?php
 
+		session_start();
+
 		$servidor = Ruta::ctrRutaServidor();
 
 		$icono = ControladorPlantilla::ctrEstiloPlantilla();
@@ -174,6 +176,7 @@ if(isset($_GET["ruta"])){
 
 ?>
 
+<input type="hidden" value="<?php echo $url; ?>" id="rutaOculta">
 <!--=====================================
 =            	JS PLUGINS          =
 ======================================-->

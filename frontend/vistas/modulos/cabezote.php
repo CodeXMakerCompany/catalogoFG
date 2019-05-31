@@ -5,18 +5,19 @@
 
  ?>
 
-<!--=====================================
-TOP
-======================================-->
+ <?php 
 
-<style>
+ 	$extra = ControladorExtra::ctrMostrarExtra();
+
+
+ 	echo'<style>
 	
 	.imageAdd{
 		position:relative;
 		box-shadow: 2px 10px 5px 0px rgba(0,0,0,0.75);
 		border: 5px solid black;
 
-		background-image: url(vistas/img/plantilla/bannerFigAnime.png);
+		background-image: url('.$url.$extra["imgFondo"].');
 		
 		border-radius: 3px;
 
@@ -26,10 +27,13 @@ TOP
 		
 
 	}
-</style>
+</style>';
 
+  ?>
 
-
+<!--=====================================
+TOP
+======================================-->
 
 <div class="imageAdd">
 <div class="container-fluid barraSuperior" id="top">

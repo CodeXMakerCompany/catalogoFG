@@ -59,6 +59,7 @@ header #btnCategorias{
 header #btnCategorias p{
 	line-height:40px;
 	margin-bottom:0px;
+	margin: 10px;
 }
 
 
@@ -69,7 +70,7 @@ header #btnCategorias p span{
 }
 
 header #buscador{
-	margin:20px 200px;
+	margin:20px 120px;
 	border-radius: 6px;
 }
 

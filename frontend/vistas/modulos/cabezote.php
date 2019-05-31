@@ -133,19 +133,14 @@ HEADER
 		
 		<div class="row" id="cabezote">
 
-			
-
-			<!--=====================================
-			BLOQUE CATEGORÍAS Y BUSCADOR
-			======================================-->
-
-			<div class="col-lg-6 col-md-6 col-sm-8 col-xs-12">
-					
-				<!--=====================================
+		<div class="container">
+		  <div class="row">
+		    <div class="col-md-2">
+		     <!--=====================================
 				BOTÓN CATEGORÍAS
 				======================================-->
 
-				<div class="col-lg-4 col-md-6 col-sm-4 col-xs-12 backColor" id="btnCategorias">
+				<div class="backColor" id="btnCategorias">
 					
 					<p>CATEGORÍAS
 					
@@ -156,18 +151,18 @@ HEADER
 					</p>
 
 				</div>
-
-				<!--=====================================
-				BUSCADOR
-				======================================-->
-				
-				<div class="input-group col-lg-10 col-md-10 col-sm-8 col-xs-12" id="buscador">
+		    </div>
+		    <div class="col-md-4">
+		      <!--=====================================
+			BLOQUE CATEGORÍAS Y BUSCADOR
+			======================================-->
+			<div class="input-group col-lg-8 col-md-8 col-sm-8 col-xs-12" id="buscador">
 					
 					<input type="search" name="buscar" class="form-control" placeholder="Buscar...">	
 
 					<span class="input-group-btn">
 						
-						<a href="#">
+						<a href="<?php echo $url; ?>buscador/1/recientes">
 
 							<button class="btn btn-default backColor" type="submit">
 								
@@ -180,32 +175,12 @@ HEADER
 					</span>
 
 				</div>
-			
-			</div>
-
-			<!--=====================================
-			CARRITO DE COMPRAS
-			======================================-->
-
-			<div class="col-lg-3 col-md-3 col-sm-2 col-xs-12" id="carrito">
 				
-				<a href="#">
-
-					<button class="btn btn-default pull-left backColor"> 
-						
-						<i class="fa fa-shopping-cart" aria-hidden="true"></i>
-					
-					</button>
 				
-				</a>	
 
-				<p class="introTitle">Lista de deseos <span class="cantidadCesta">3</span> <br> MXN $ <span class="sumaCesta">20</span></p>	
+		    </div>
 
-			</div>
-
-		</div>
-
-		<!--=====================================
+		    <!--=====================================
 		CATEGORÍAS
 		======================================-->
 
@@ -249,9 +224,42 @@ HEADER
 			?>	
 
 		</div>
+		<div class="col-md-6">
+      <!--=====================================
+			CARRITO DE COMPRAS
+			======================================-->
+
+			<div  id="carrito">
+				
+				<a href="#">
+
+					<button class="btn btn-default pull-left backColor"> 
+						
+						<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+					
+					</button>
+				
+				</a>	
+
+				<p style="color: white;">TU CESTA <span class="cantidadCesta">3</span> <br> USD $ <span class="sumaCesta">20</span></p>	
+
+			</div>
+
+		</div>
+	</div>	
+	
+
+		
+    </div>	
+		
 
 	</div>
+
+
 
 </header>
 
 
+
+			
+		

@@ -161,6 +161,10 @@ if(isset($_GET["ruta"])){
 		
 			include "modulos/infoproducto.php";
 
+	}else if ($rutas[0] == "buscador") {
+		
+			include "modulos/buscador.php";
+
 	}else{
 
 		include "modulos/error404.php";
@@ -214,6 +218,7 @@ if(isset($_GET["ruta"])){
 <script src="<?php echo $url; ?>vistas/js/plantilla.js"></script>
 <script src="<?php echo $url; ?>vistas/js/slide.js"></script>
 <script src="<?php echo $url; ?>vistas/js/preloader.js"></script>
+<script src="<?php echo $url; ?>vistas/js/buscador.js"></script>
 
 
 

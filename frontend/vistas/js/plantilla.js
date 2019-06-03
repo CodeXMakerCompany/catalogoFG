@@ -39,6 +39,8 @@ $(window).scroll(function(){
 
 	if(window.matchMedia("(min-width:768px)").matches){
 
+		if ($(".banner").html() != null) {
+
 		if(scrollY < ($(".banner").offset().top)+190){
 
 			$(".banner img").css({"margin-top":-scrollY/4+"px"})
@@ -49,6 +51,8 @@ $(window).scroll(function(){
 		}
 
 	}	
+
+	}
 	
 })
 
@@ -89,9 +93,18 @@ var url = window.location.href;
 
 var indice = url.split("/");
 
+var pagActual = indice[5];
+
+if (isNaN(pagActual)) {
+
+	$("#item1").addClass("active");
+
+}else {
+
+	$("#item"+pagActual).addClass("active");
+}
 
 
-$("#item"+indice.pop()).addClass("active");
 
 
 

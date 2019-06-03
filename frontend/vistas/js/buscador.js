@@ -1,6 +1,15 @@
 /*================================
 =            BUSCADOR            =
 ================================*/
+$("#buscador a").click(function(){
+
+if ($("#buscador input").val() == "") {}
+
+	$("#buscador a").attr("href","");
+
+})
+
+
 
 $("#buscador input").change(function(){
 

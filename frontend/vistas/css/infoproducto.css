@@ -1,0 +1,155 @@
+/*=============================================
+INFOPRODUCTO
+=============================================*/
+
+.infoproducto figure.visor img{
+
+	display: none;
+	cursor: crosshair;
+
+}
+
+.infoproducto figure.visor img:first-child{
+	margin-top: 10px;
+	display: block;
+	background-color: black;
+	border-color: black;
+	border-radius: 4px;
+}
+
+.visor{
+
+	-webkit-box-shadow: -12px 6px 5px -3px rgba(20,19,20,1);
+	-moz-box-shadow: -12px 6px 5px -3px rgba(20,19,20,1);
+	box-shadow: -12px 6px 5px -3px rgba(20,19,20,1);
+
+}
+
+
+
+.flexslider{
+
+	cursor: pointer;
+	display: block;
+	background-color: black;
+	border-color: black;
+	border-radius: 4px;
+	-webkit-box-shadow: -12px 6px 5px -3px rgba(20,19,20,1);
+	-moz-box-shadow: -12px 6px 5px -3px rgba(20,19,20,1);
+	box-shadow: -12px 6px 5px -3px rgba(20,19,20,1);
+}
+
+
+.lupa{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+}
+
+.lupa img{
+	position: relative;
+	margin-top:-100%;
+	margin-left: -50%;
+	width: 160%;
+}
+
+.btnFacebook{
+
+	background: #46639f;
+	color:white;
+	text-align: center;
+	line-height: 30px;
+	padding: 8px;
+	font-size: 18px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	cursor: pointer;
+	border-radius: 4px;
+
+}
+
+.btnTwitter{
+
+	background: #0084b4;
+	color:white;
+	text-align: center;
+	line-height: 30px;
+	padding: 8px;
+	font-size: 18px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	cursor: pointer;
+	border-radius: 4px;
+	margin-top: -12px;
+
+}
+
+.btnInstagram{
+
+	background: #f09433; 
+	background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+	background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+	background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+	color:white;
+	text-align: center;
+	line-height: 30px;
+	padding: 8px;
+	font-size: 18px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	cursor: pointer;
+	border-radius: 4px;
+	margin-top: -12px;
+
+}
+
+.compartirRedes{
+	
+	border-color: transparent;
+	background: transparent;
+
+}
+
+.titleStl{
+	font-size: 40px;
+	color: #FFFFFF;
+	text-shadow: -1px 9px 10px rgba(62,206,202,0.69);
+	font-family: "Snell Roundhand", cursive, serif;
+
+}
+
+.priceStl{
+	font-size: 45px;
+  background: -webkit-linear-gradient(#0EDCE5, #0EBCE5, #12A3DA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+
+}
+
+
+.descripctionStl{
+	color: white;
+}
+
+.iconStl li i{
+	
+	background: -webkit-linear-gradient(#0EDCE5, #0EBCE5, #12A3DA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-right: 10px;
+}
+
+.iconStl{
+	color: white;
+}
+
+.entregaStl{
+	color:black;
+	background: #C4C8CA;
+	opacity: 0.5;
+	border-radius: 3px;
+}

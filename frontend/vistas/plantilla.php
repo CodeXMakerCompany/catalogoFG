@@ -45,7 +45,7 @@
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
-
+	<link rel="stylesheet" href="<?php echo $url; ?>vistas/css/plugins/flexslider.css">
 	<!--=====================================
 	=           HOJAS DE ESTILO PERSONALIZADAS         =
 	======================================-->
@@ -58,7 +58,9 @@
 
 	<link rel="stylesheet" href="<?php echo $url; ?>vistas/css/slide.css">
 
-	<link rel="stylesheet" href="<?php echo $url; ?>vistas/css/productos.css">	
+	<link rel="stylesheet" href="<?php echo $url; ?>vistas/css/productos.css">
+
+	<link rel="stylesheet" href="<?php echo $url; ?>vistas/css/infoproducto.css">		
 
 	
 
@@ -71,6 +73,8 @@
 	<script src="<?php echo $url; ?>vistas/js/plugins/jquery.easing.js"></script>
 
 	<script src="<?php echo $url; ?>vistas/js/plugins/jquery.scrollUp.js"></script>
+
+	<script src="<?php echo $url; ?>vistas/js/plugins/jquery.flexslider.js"></script>
 
 
 </head>
@@ -219,6 +223,7 @@ if(isset($_GET["ruta"])){
 <script src="<?php echo $url; ?>vistas/js/slide.js"></script>
 <script src="<?php echo $url; ?>vistas/js/preloader.js"></script>
 <script src="<?php echo $url; ?>vistas/js/buscador.js"></script>
+<script src="<?php echo $url; ?>vistas/js/infoproducto.js"></script>
 
 
 

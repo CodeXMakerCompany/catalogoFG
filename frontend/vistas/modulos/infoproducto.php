@@ -9,7 +9,7 @@
 =            BREADCRUMB INFOPRODUCTOS            =
 ============================================= -->
 
-<div class="container-fluid">
+<div class="container-fluid breadCStl">
 	
 
     				<ul class="breadcrumb fondoBreadcrumb">

@@ -1,7 +1,9 @@
 /*=============================================
 INFOPRODUCTO
 =============================================*/
-
+.breadCStl ul{
+	background:#291444;
+}
 .infoproducto figure.visor img{
 
 	display: none;

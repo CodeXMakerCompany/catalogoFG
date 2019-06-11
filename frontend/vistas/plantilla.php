@@ -224,6 +224,7 @@ if(isset($_GET["ruta"])){
 <script src="<?php echo $url; ?>vistas/js/preloader.js"></script>
 <script src="<?php echo $url; ?>vistas/js/buscador.js"></script>
 <script src="<?php echo $url; ?>vistas/js/infoproducto.js"></script>
+<script src="<?php echo $url; ?>vistas/js/testShopCar.js"></script>
 
 
 

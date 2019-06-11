@@ -105,7 +105,7 @@ LISTAR PRODUCTOS
 
 
 		/*--=====================================
-			LLAMADO DE PRAODUCTOS, DE CATEGORIAS SUBCATEGORIAS Y DESTACADOS
+			LLAMADO DE PRODUCTOS, DE CATEGORIAS SUBCATEGORIAS Y DESTACADOS
 			======================================--*/
 
 			$productos = null;
@@ -153,7 +153,7 @@ LISTAR PRODUCTOS
 								echo '
 								<div class="card bg-light mb-3">
 
-									<a href="'.$value["ruta"].'">
+									<a href="'.$url.$value["ruta"].'">
 									    <img class="card-img-top" src="'.$servidor.$value["portada"].'" alt="Card image cap">
 									    <div class="card-body">
 

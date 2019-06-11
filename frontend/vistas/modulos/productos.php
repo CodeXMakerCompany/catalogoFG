@@ -120,7 +120,13 @@ LISTAR PRODUCTOS
 					}
 				}else{
 
-					$modo = $_SESSION["ordenar"];
+					if (isset($_SESSION["ordenar"])) {
+						$modo = $_SESSION["ordenar"];
+					}else{
+						$modo = "DESC";
+					}
+
+					
 
 				}
 					
@@ -212,7 +218,7 @@ LISTAR PRODUCTOS
 								echo '
 								<div class="card bg-light mb-3">
 
-									<a href="'.$value["ruta"].'">
+									<a href="'. $url.$value["ruta"].'">
 									    <img class="card-img-top" src="'.$servidor.$value["portada"].'" alt="Card image cap">
 									    <div class="card-body">
 

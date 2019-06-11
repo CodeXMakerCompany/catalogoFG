@@ -36,42 +36,43 @@
 
 				$infoproducto = ControladorProductos::ctrMostrarInfoProducto($item, $valor);
 
+				
+
+				$multimedia = json_decode($infoproducto["multimedia"], true);
+
+
+
+
 				/*=============================================
 				=            VISOR DE IMAGENES           =
 				=============================================*/
 
 				echo '<div class="col-md-5 col-sm-6 col-xs-12 visorImg">
 				
-				<figure class="visor">
+				<figure class="visor">';
 
-					<img id="lupa1" class="img-thumbnail" src="http://localhost/catalogoFig/backend/vistas/img/multimedia/figurasM/tam (1).jpg" alt="tennis verde 11">
-					<img id="lupa2" class="img-thumbnail" src="http://localhost/catalogoFig/backend/vistas/img/multimedia/figurasM/tam (2).jpg" alt="tennis verde 11">
-					<img id="lupa3" class="img-thumbnail" src="http://localhost/catalogoFig/backend/vistas/img/multimedia/figurasM/tam (3).jpg" alt="tennis verde 11">
-					<img id="lupa4" class="img-thumbnail" src="http://localhost/catalogoFig/backend/vistas/img/multimedia/figurasM/tam (4).jpg" alt="tennis verde 11">
-					<img id="lupa5" class="img-thumbnail" src="http://localhost/catalogoFig/backend/vistas/img/multimedia/figurasM/tam (5).jpg" alt="tennis verde 11">
-
+				for ($i=0; $i < count($multimedia) ; $i++) { 
 					
-				</figure>
+
+					echo '<img id="lupa'.($i+1).'" class="img-thumbnail" src="'.$servidor.$multimedia[$i]["foto"].'">';
+				}
+			
+				echo '</figure>
 
 				<!-- Place somewhere in the <body> of your page -->
 				<div class="flexslider">
-				  <ul class="slides">
-				    <li>
-				      <img value="1" class="img-thumbnail" src="http://localhost/catalogoFig/backend/vistas/img/multimedia/figurasM/tam (1).jpg" alt="tennis verde 11">
-				    </li>
-				    <li>
-				      <img value="2" class="img-thumbnail" src="http://localhost/catalogoFig/backend/vistas/img/multimedia/figurasM/tam (2).jpg" alt="tennis verde 11">
-				    </li>
-				    <li>
-				      <img value="3" class="img-thumbnail" src="http://localhost/catalogoFig/backend/vistas/img/multimedia/figurasM/tam (3).jpg" alt="tennis verde 11">
-				    </li>
-				    <li>
-				      <img value="4" class="img-thumbnail" src="http://localhost/catalogoFig/backend/vistas/img/multimedia/figurasM/tam (4).jpg" alt="tennis verde 11">
-				    </li>
-				    <li>
-				      <img value="5" class="img-thumbnail" src="http://localhost/catalogoFig/backend/vistas/img/multimedia/figurasM/tam (5).jpg" alt="tennis verde 11">
-				    </li>
-				  </ul>
+				  <ul class="slides">';
+
+				  		for ($i=0; $i < count($multimedia) ; $i++) { 
+					
+
+					echo '<li>
+				      <img value="'.($i+1).'" class="img-thumbnail" src="'.$servidor.$multimedia[$i]["foto"].'" alt="'.$infoproducto["titulo"].'">
+				    </li>';
+				}
+
+   
+				  echo '</ul>
 				</div>
 
 			</div>';
@@ -205,7 +206,11 @@
 					=============================================*/
 					if ($infoproducto["oferta"] == 0) {
 
+						
+
 						echo '<h2 class="priceStl">USD $'.$infoproducto["precio"].'</h2>';
+
+
 
 					}else{
 
@@ -289,7 +294,7 @@
 						echo '<span class="badge badge-warning">ENTREGA INMEDIATA</span> ';
 					}else{
 
-						echo '<h4 class="col-md-12 col-sm-0 col-xs-0">
+						echo '<h4 class="col-md-12 col-sm-12 col-xs-12">
 
 								<hr>
 
@@ -299,25 +304,8 @@
 									Entrega en '.$infoproducto["entrega"].' dias |
 									<i class="fa fa-shopping-cart" ></i>
 									'.$infoproducto["ventas"].' ventas | <i class="fa fa-eye" ></i>
-			Visto por <span class="vistas" tipo="'.$infoproducto["precio"].'">'.$infoproducto["vistas"].' </span> personas
+			                             Visto por <span class="vistas" tipo="'.$infoproducto["precio"].'">'.$infoproducto["vistas"].' </span> personas
 								</span>
-
-							</h4>
-
-							<h4 class="col-lg-0 col-md-0 col-xs-12">
-
-								<hr>
-
-								<small>
-
-									<i class="fa fa-clock-o" style="margin-right:5px"></i>
-									Entrega inmediata <br> 
-									<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
-									'.$infoproducto["ventas"].' ventas <br>
-									<i class="fa fa-eye" style="margin:0px 5px"></i>
-									Visto por <span class="vistas" tipo="'.$infoproducto["precio"].'">'.$infoproducto["vistas"].'</span> personas
-
-								</small>
 
 							</h4>';
 					}

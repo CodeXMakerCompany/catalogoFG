@@ -51,6 +51,8 @@
 				
 				<figure class="visor">';
 
+				if ($multimedia != null) {
+
 				for ($i=0; $i < count($multimedia) ; $i++) { 
 					
 
@@ -69,6 +71,9 @@
 					echo '<li>
 				      <img value="'.($i+1).'" class="img-thumbnail" src="'.$servidor.$multimedia[$i]["foto"].'" alt="'.$infoproducto["titulo"].'">
 				    </li>';
+
+					}
+
 				}
 
    
@@ -120,11 +125,6 @@
 
 					    <a class="dropdown-item btnFacebook" href="#"><i class="fa fa-facebook"></i> Facebook</a>
 
-					    <a class="dropdown-item btnTwitter" href="#"><i class="fa fa-twitter"></i> Twitter</a>
-
-					    <a class="dropdown-item btnInstagram" href="#"><i class="fa fa-instagram"></i> Instagram</a>
-
-					    
 
 					  </div>
 					</div>

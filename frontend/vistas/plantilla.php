@@ -4,16 +4,6 @@
 
 	<meta charset="UTF-8">
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-	<meta name="title" content="Tienda Virtual">
-
-	<meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam accusantium enim esse eos officiis sit officia">
-
-	<meta name="keyword" content="Lorem ipsum, dolor sit amet, consectetur, adipisicing, elit, Quisquam, accusantium, enim, esse">
-
-	<title>Catálogo | AnimeFigures</title>
-
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 
 
@@ -33,7 +23,68 @@
 		
 		$url = Ruta::ctrRuta();
 
+		/*=============================================
+		MARCADO DE CABECERA
+		=============================================*/
+
+		$rutas = array();
+
+		if(isset($_GET["ruta"])){
+
+			$rutas = explode("/", $_GET["ruta"]);
+
+			$ruta = $rutas[0];
+
+		}else{
+
+			$ruta = "inicio";
+
+		}
+
+		$cabeceras = ControladorPlantilla::ctrTraerCabeceras($ruta);
+		
+		if(!$cabeceras["ruta"]){
+
+			$ruta = "inicio";
+
+			$cabeceras = ControladorPlantilla::ctrTraerCabeceras($ruta);
+
+			
+		}
+
 	?>
+
+	<!--=====================================
+	Marcado HTML5
+	======================================-->
+
+	<meta name="title" content="<?php echo $cabeceras['titulo']; ?>">
+
+	<meta name="description" content="<?php echo $url.$cabeceras['ruta']; ?>">
+
+	<meta name="keyword" content="<?php echo $cabeceras['palabrasClaves']; ?>">
+
+	<title>Catálogo Figuras</title>
+
+	<!--=====================================
+	Marcado de Open Graph FACEBOOK
+	======================================-->
+	<meta property="og:title"   content="<?php echo $cabeceras['titulo']; ?>">
+	<meta property="og:url" content="<?php echo $url.$cabeceras['ruta']; ?>">
+	<meta property="og:description" content="<?php echo $cabeceras['descripcion']; ?>">
+	<meta property="og:image"  content="<?php echo $cabeceras['portada']; ?>">
+	<meta property="og:type"  content="website">	
+	<meta property="og:site_name" content="CDX catálogo">
+	<meta property="og:locale" content="es_CO">
+<!--=====================================
+	Marcado para DATOS ESTRUCTURADOS GOOGLE
+	======================================-->
+	
+	<meta itemprop="name" content="<?php echo $cabeceras['titulo']; ?>">
+	<meta itemprop="url" content="<?php echo $url.$cabeceras['ruta']; ?>">
+	<meta itemprop="description" content="<?php echo $cabeceras['descripcion']; ?>">
+	<meta itemprop="image" content="<?php echo $cabeceras['portada']; ?>">
+
 
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -169,6 +220,13 @@ if(isset($_GET["ruta"])){
 		
 			include "modulos/buscador.php";
 
+	}else if ($rutas[0] == "inicio"){
+
+
+		include "modulos/slide.php";
+		include "modulos/destacados.php";
+
+
 	}else{
 
 		include "modulos/error404.php";
@@ -209,6 +267,48 @@ if(isset($_GET["ruta"])){
       },
     });
   </script>
+
+<!--=====================================
+=   https://developers.facebook.com/      =
+======================================-->
+
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '2384102184967681',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v3.3'
+    });
+      
+    FB.AppEvents.logPageView();   
+      
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+<script>
+	
+	$(".btnFacebook").click(function(){
+
+		FB.ui({
+
+			method: 'share',
+			display: 'popup',
+			href: '<?php echo $url.$_SERVER['REQUEST_URI']; ?>'
+		}, function(response){});
+	})
+
+</script>
 
 <!--=====================================
 =            	JS PERSONALIZADO          =

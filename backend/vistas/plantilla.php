@@ -9,21 +9,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Catalogo | UI</title>
 
-  <base href="vistas/">
-
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="vistas/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="vistas/bower_components/font-awesome/css/font-awesome.min.css">
   <!-- Ionicons -->
-  <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="vistas/bower_components/Ionicons/css/ionicons.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="vistas/dist/css/AdminLTE.min.css">
+
+  <link rel="stylesheet" href="vistas/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
   <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
         page. However, you can choose any other skin. Make sure you
         apply the skin class to the body tag so the changes take effect. -->
-  <link rel="stylesheet" href="dist/css/skins/skin-purple-light.min.css">
+  <link rel="stylesheet" href="vistas/dist/css/skins/skin-purple-light.min.css">
+
+  <!-- iCheck -->
+  <link rel="stylesheet" href="vistas/plugins/iCheck/square/blue.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -33,7 +36,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <![endif]-->
 
    <!-- CUSTOM CSS'S-->
-   <link rel="stylesheet" href="dist/css/customCssPlantilla.css">
+   <link rel="stylesheet" href="vistas/dist/css/customCssPlantilla.css">
 
   <!-- Google Font -->
   <link rel="stylesheet"
@@ -59,41 +62,86 @@ desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
-<body class="hold-transition skin-purple-light sidebar-mini">
+<body class="hold-transition skin-purple-light sidebar-mini login-page">
 
 
+<?php 
 
+  session_start();
 
-<div class="wrapper">
+  if (isset($_SESSION["validarSesionBackend"]) && $_SESSION["validarSesionBackend"] == "ok") {
+    
+    echo '<div class="wrapper">';
 
-  <!--=============================================
-  =            Cabezote                         =
-  =============================================-->
-  
-  <?php 
 
     /*================================
     =     CABEZOTE            =
     ================================*/
+        
+        include "modulos/cabezote.php";
+
+    /*===============================
+        =           LATERAL            =
+        ===============================*/
+
+        include "modulos/lateral.php";
+
+
+    /*===============================
+        =            CONTENT            =
+        ===============================*/
+
+        if (isset($_GET["ruta"])) {
+      
+      if ($_GET["ruta"] == "inicio" || 
+          $_GET["ruta"] == "productos" || 
+          $_GET["ruta"] == "salir"){
+        
+        include "modulos/".$_GET["ruta"].".php";     
+
+      }
+
+    }
+
+
+    echo '</div>';
+
+  }else{
+
+
+      include "modulos/login.php";
+
+  }
+
+   ?>
+
+
+
+
+
+  <?php 
+
+
     
-    include "modulos/cabezote.php";
+
+    
+    
+    //
     
     /*=====  CABEZOTE  ======*/
     
 
-    /*===============================
-    =           LATERAL            =
-    ===============================*/
     
-    include "modulos/lateral.php";
+    
+    
     
     /*=====  End ofLATERAL  ======*/
 
-    /*===============================
-    =            CONTENT            =
-    ===============================*/
     
-    include "modulos/inicio.php";
+
+    
+    
+    
     
     /*=====  End of CONTENT  ======*/
     
@@ -101,7 +149,7 @@ desired effect
     =            FOOTER            =
     ==============================*/
     
-    include "modulos/footer.php";
+    
     
     /*=====  End of FOOTER  ======*/
 
@@ -109,7 +157,7 @@ desired effect
     =            OPTIONS            =
     ===============================*/
     
-    include "modulos/options.php";
+    //include "modulos/options.php";
     
     
     /*=====  End of OPTIONS  ======*/
@@ -120,14 +168,28 @@ desired effect
 <!-- REQUIRED JS SCRIPTS -->
 
 <!-- jQuery 3 -->
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="vistas/bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="vistas/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
-<script src="dist/js/adminlte.min.js"></script>
+<script src="vistas/dist/js/adminlte.min.js"></script>
+<!-- Datatables -->
+<script src="vistas/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="vistas/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 
-<!-- Optionally, you can add Slimscroll and FastClick plugins.
-     Both of these plugins are recommended to enhance the
-     user experience. -->
+<!-- JS PRESONALIZADO -->
+<script src="vistas/js/gestorProductos.js"></script>
+
+<script src="vistas/plugins/iCheck/icheck.min.js"></script>
+<script>
+  $(function () {
+    $('input').iCheck({
+      checkboxClass: 'icheckbox_square-blue',
+      radioClass: 'iradio_square-blue',
+      increaseArea: '20%' /* optional */
+    });
+  });
+</script>
+
 </body>
 </html>

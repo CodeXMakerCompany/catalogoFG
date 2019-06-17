@@ -1,3 +1,8 @@
+<?php 
+
+session_start();
+
+ ?>
 <!DOCTYPE html>
 <!--
 This is a starter template page. Use this page to start your new project from
@@ -19,7 +24,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Theme style -->
   <link rel="stylesheet" href="vistas/dist/css/AdminLTE.min.css">
 
+  <!-- Datatables -->
   <link rel="stylesheet" href="vistas/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="vistas/bower_components/datatables.net-bs/css/responsive.bootstrap.min.css">
+
+   <!-- Dropzone for images -->
+   <link rel="stylesheet" href="vistas/plugins/dropzone/dropzone.css">
+
+
+
   <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
         page. However, you can choose any other skin. Make sure you
         apply the skin class to the body tag so the changes take effect. -->
@@ -37,37 +50,41 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
    <!-- CUSTOM CSS'S-->
    <link rel="stylesheet" href="vistas/dist/css/customCssPlantilla.css">
+   <link rel="stylesheet" href="vistas/CSS/modalDesign.css">
 
   <!-- Google Font -->
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+  <!-- jQuery 3 -->
+<script src="vistas/bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="vistas/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- AdminLTE App -->
+<script src="vistas/dist/js/adminlte.min.js"></script>
+
+<!-- Datatables -->
+<script src="vistas/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="vistas/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="vistas/bower_components/datatables.net-bs/js/dataTables.responsive.min.js"></script>   
+<script src="vistas/bower_components/datatables.net-bs/js/responsive.bootstrap.min.js"></script>     
+
+ <!-- Dropzone for images -->
+
+ <script src="vistas/plugins/dropzone/dropzone.js"></script>
+
+ <!-- bootstrap tags input -->
+  <link rel="stylesheet" href="vistas/plugins/tags/bootstrap-tagsinput.css">    
+
+
 </head>
-<!--
-BODY TAG OPTIONS:
-=================
-Apply one or more of the following classes to get the
-desired effect
-|---------------------------------------------------------|
-| SKINS         | skin-blue                               |
-|               | skin-black                              |
-|               | skin-purple                             |
-|               | skin-yellow                             |
-|               | skin-red                                |
-|               | skin-green                              |
-|---------------------------------------------------------|
-|LAYOUT OPTIONS | fixed                                   |
-|               | layout-boxed                            |
-|               | layout-top-nav                          |
-|               | sidebar-collapse                        |
-|               | sidebar-mini                            |
-|---------------------------------------------------------|
--->
+
 <body class="hold-transition skin-purple-light sidebar-mini login-page">
 
 
 <?php 
 
-  session_start();
+  
 
   if (isset($_SESSION["validarSesionBackend"]) && $_SESSION["validarSesionBackend"] == "ok") {
     
@@ -116,66 +133,11 @@ desired effect
    ?>
 
 
-
-
-
-  <?php 
-
-
-    
-
-    
-    
-    //
-    
-    /*=====  CABEZOTE  ======*/
-    
-
-    
-    
-    
-    
-    /*=====  End ofLATERAL  ======*/
-
-    
-
-    
-    
-    
-    
-    /*=====  End of CONTENT  ======*/
-    
-    /*==============================
-    =            FOOTER            =
-    ==============================*/
-    
-    
-    
-    /*=====  End of FOOTER  ======*/
-
-    /*===============================
-    =            OPTIONS            =
-    ===============================*/
-    
-    //include "modulos/options.php";
-    
-    
-    /*=====  End of OPTIONS  ======*/
-    
-    
-   ?>
-
 <!-- REQUIRED JS SCRIPTS -->
 
-<!-- jQuery 3 -->
-<script src="vistas/bower_components/jquery/dist/jquery.min.js"></script>
-<!-- Bootstrap 3.3.7 -->
-<script src="vistas/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- AdminLTE App -->
-<script src="vistas/dist/js/adminlte.min.js"></script>
-<!-- Datatables -->
-<script src="vistas/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
-<script src="vistas/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<!-- bootstrap tags input https://bootstrap-tagsinput.github.io/bootstrap-tagsinput/examples/-->
+  <script src="vistas/plugins/tags/bootstrap-tagsinput.min.js"></script>
+
 
 <!-- JS PRESONALIZADO -->
 <script src="vistas/js/gestorProductos.js"></script>
@@ -190,6 +152,8 @@ desired effect
     });
   });
 </script>
+
+
 
 </body>
 </html>

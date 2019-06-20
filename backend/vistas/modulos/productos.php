@@ -85,7 +85,7 @@
         
             <!-- cabeza del modal -->
 
-            <div class="modal-header windowStl" style="background: #3c8dbc; color:white">
+            <div class="modal-header windowStl colorHeader">
               
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
 
@@ -109,7 +109,7 @@
                   
                   <span class="input-group-addon"><i class="fa fa-product-hunt"></i></span>
 
-                  <input type="text" class="form-control input-lg validarProducto nuevoProducto" placeholder="Ingresar titulo producto">  
+                  <input type="text" class="form-control input-lg validarProducto nuevoProducto tituloProducto" placeholder="Ingresar titulo producto">  
                   </div>
 
                 </div>
@@ -350,7 +350,7 @@
                 
                 <span class="input-group-addon"><i class="fa fa-key"></i></span>
 
-                <input type="text" class="form-control input-lg tagsInputpClavesProducto" data-role="tagsinput" placeholder="Ingresar palabras claves">
+                <input type="text" class="form-control input-lg tagsInput pClavesProducto" data-role="tagsinput" placeholder="Ingresar palabras claves">
 
               </div>
 
@@ -386,6 +386,112 @@
                 <img src="vistas/img/preloader/kokoro.gif" class="img-thumbnail previsualizarPrincipal" width="200px">
 
             </div>
+            
+            <!-- =============================================
+            =            AGREGAR PRECIO, PESO Y ENTREGA      =
+            =============================================-->
+            
+            <div class="form-group row">
+              
+              <!-- PRECIO -->
+
+              <div class="col-md-4 col-xs-12">
+                
+                <div class="panel">PRECIO</div>
+
+                <div class="input-group">
+                  
+                  <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
+
+                  <input type="number" class="form-control input-lg precio" min="0" step="any">
+
+                </div>
+
+              </div>
+
+              <!-- PESO -->
+
+              <div class="col-md-4 col-xs-12">
+                
+                <div class="panel">PESO</div>
+
+                <div class="input-group">
+                  
+                  <span class="input-group-addon"><i class="fa fa-balance-scale"></i></span>
+
+                  <input type="number" class="form-control input-lg peso" min="0" step="any" value="0">
+
+                </div>
+
+              </div>
+
+              <!-- ENTREGA -->
+
+              <div class="col-md-4 col-xs-12">
+                
+                <div class="panel">ENTREGA</div>
+
+                <div class="input-group">
+                  
+                  <span class="input-group-addon"><i class="fa fa-truck"></i></span>
+
+                  <input type="number" class="form-control input-lg entrega" value="0" step="any" min="0">
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- =============================================
+            =            AGREGAR OFERTA                      =
+            =============================================-->
+
+            <div class="form-group">
+              
+              <select class="form-control input-lg selActivarOferta">
+                
+                <option value="">No tiene oferta</option>
+                <option value="oferta">Activar oferta</option>
+
+              </select>
+
+            </div>
+
+            <div class="datosOferta" style="display: none">
+              
+              <!-- VALOR OFERTAS -->
+
+              <div class="form-group row">
+                
+                <div class="col-xs-6">
+                  
+                  <div class="input-group">
+                    
+                    <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
+
+                    <input class="form-control input-lg valorOferta precioOferta" tipo="oferta" type="number" value="0" min="0" placeholder="Precio">
+
+                  </div>
+
+                </div>
+
+                <div class="col-xs-6">
+                  
+                  <div class="input-group">
+
+                    <input class="form-control input-lg valorOferta descuentoOferta" tipo="descuento" type="number" value="0" min="0" placeholder="Descuento">
+                    <span class="input-group-addon"><i class="fa fa-percent"></i></span>
+
+                  </div>
+
+                </div>
+
+              </div>
+              
+            </div>
+
+
 
           </div>
 

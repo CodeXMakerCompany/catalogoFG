@@ -1,3 +1,10 @@
+
+
 .windowStl{
 	border-radius: 6px;
+}
+
+.colorHeader{
+	background-color: #605DA3;
+	color: white;
 }

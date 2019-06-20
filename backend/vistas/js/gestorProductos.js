@@ -294,3 +294,155 @@ $(".fotoPrincipal").change(function(){
 })
 
 /*=====  End of SUBIENDO LA FOTO Principal  ======*/
+
+/*======================================
+=            ACTIVAR OFERTA            =
+======================================*/
+
+function activarOferta(event) {
+
+	if (event == "oferta") {
+
+		$(".datosOferta").show();
+		$(".valorOferta").prop("required", true);
+		$(".valorOferta").val("");
+
+	}else{
+
+		$(".datosOferta").hide();
+		$(".valorOferta").prop("required", false);
+		$(".valorOferta").val("");
+	}
+
+}
+
+$(".selActivarOferta").change(function(){
+
+
+	activarOferta($(this).val())
+
+})
+
+/*=====  End of ACTIVAR OFERTA  ======*/
+
+/*====================================
+=            VALOR OFERTA            =
+====================================*/
+
+$(".valorOferta").change(function(){
+
+	if($(".precio").val()!= 0){
+
+		if($(this).attr("tipo") == "oferta"){
+
+			var descuento = 100 - (Number($(this).val())*100/Number($(".precio").val()));
+
+			$(".precioOferta").prop("readonly",true);
+			$(".descuentoOferta").prop("readonly",false);
+			$(".descuentoOferta").val(Math.ceil(descuento));	
+
+		}
+
+		if($(this).attr("tipo") == "descuento"){
+
+			var oferta = Number($(".precio").val())-(Number($(this).val())*Number($(".precio").val())/100);
+			
+			$(".descuentoOferta").prop("readonly",true);
+			$(".precioOferta").prop("readonly",false);
+			$(".precioOferta").val(oferta);
+
+		}
+
+	}else{
+
+	 swal({
+	      title: "Error al agregar la oferta",
+	      text: "¡Primero agregue un precio al producto!",
+	      type: "error",
+	      confirmButtonText: "¡Cerrar!"
+	    });
+
+	 $(".precioOferta").val(0);
+	 $(".descuentoOferta").val(0);
+
+	 return;
+
+	}
+
+})
+
+
+/*=====  End of VALOR OFERTA  ======*/
+
+
+/*======================================
+=            CAMBIAR PRECIO            =
+======================================*/
+
+$(".precio").change(function(){
+
+	$(".precioOferta").val(0);
+	 $(".descuentoOferta").val(0);
+
+})
+
+/*=====  End of CAMBIAR PRECIO  ======*/
+
+/*===========================================
+=            GUARDAR EL PRODUCTO            =
+===========================================*/
+
+$(".guardarProducto").click(function(){
+
+	/*=====  Paso1: preguntar si los campos del formulario estan llenos  ======*/
+	if ($(".tituloProducto").val() != "" &&
+		$(".seleccionarCategoria").val() != "" &&
+		$(".seleccionarSubCategoria").val() != "" &&
+		$(".descripcionProducto").val() != "" &&
+		$(".pClavesProducto").val() != ""){
+
+		if (arrayFiles.length > 0 && $(".rutaProducto").val() != "") {
+
+			var listaMultimedia = [];
+
+			for (var i = 0; i < arrayFiles.length; i++) {
+				
+				/*=====  se designa la ruta donde se creara la carpeta
+				y el archivo que viene en el array dependiente del
+				numero de imagenes seleccionadas  ======*/
+				var datosMultimedia = new FormData();
+				datosMultimedia.append("file", arrayFiles[i]);
+				datosMultimedia.append("ruta",$(".rutaProducto").val());
+
+				ajax({
+					url:"ajax/productos.ajax.php",
+					method:"POST",
+					data: datosMultimedia,
+					cache: false,
+					contentType: false,
+					processData: false,
+					dataType: "json",
+					success:function(respuesta){
+
+							console.log("respuesta", respuesta);
+					}
+
+				})
+
+			}
+
+		}
+
+		}else {
+
+			swal({
+		      title: "Llenar los campos obligatorios",
+		      type: "error",
+		      confirmButtonText: "¡Cerrar!"
+		    });
+
+		    return;
+		}
+})
+
+/*=====  End of GUARDAR EL PRODUCTO  ======*/

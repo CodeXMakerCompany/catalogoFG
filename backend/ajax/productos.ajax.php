@@ -31,7 +31,22 @@
  		
  		/*=====  End of VALIDAR PRODUCTO  ======*/
  		
+ 		/*========================================
+ 		=      RECIBIR MULTIMEDIA   			=
+ 		========================================*/
 
+ 		public $imagenMultimedia;
+ 		public $rutaMultimedia;
+
+ 		public function ajaxRecibirMultimedia(){
+
+ 			$datos = $this->imagenMultimedia;
+ 			$ruta = $this->rutaMultimedia;
+
+ 			$respuesta = ControladorProductos::ctrSubirMultimediaTemporal($datos, $ruta);
+
+ 			echo $respuesta;
+ 		}
  	}
 
  	/*========================================
@@ -44,4 +59,17 @@
  			$valProducto -> validarProducto = $_POST["validarProducto"];
  			$valProducto -> ajaxValidarProducto();
  			
- 		}	
+ 		}
+
+ 		/*========================================
+ 		=      RECIBIR ARCHIVOS MULTIMEDIA   =
+ 		========================================*/
+
+ 			if (isset($_FILES["file"])) {
+ 					
+ 					$multimedia = new AjaxProductos();
+ 					$multimedia -> imagenMultimedia = $_FILES["file"];
+ 					$multimedia -> rutaMultimedia = $_POST["ruta"];
+ 					$multimedia -> ajaxRecibirMultimedia();
+ 					
+ 				}	

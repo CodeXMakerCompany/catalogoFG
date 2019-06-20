@@ -74,7 +74,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
  <script src="vistas/plugins/dropzone/dropzone.js"></script>
 
  <!-- bootstrap tags input -->
-  <link rel="stylesheet" href="vistas/plugins/tags/bootstrap-tagsinput.css">    
+  <link rel="stylesheet" href="vistas/plugins/tags/bootstrap-tagsinput.css">
+
+  <!-- SweetAlert 2 https://sweetalert2.github.io/-->
+  <script src="plugins/sweetalert2/sweetalert2.all.js"></script>    
 
 
 </head>

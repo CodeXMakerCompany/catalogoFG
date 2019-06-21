@@ -392,6 +392,8 @@ $(".precio").change(function(){
 =            GUARDAR EL PRODUCTO            =
 ===========================================*/
 
+var multimediaFisica = null;
+
 $(".guardarProducto").click(function(){
 
 	/*=====  Paso1: preguntar si los campos del formulario estan llenos  ======*/
@@ -412,19 +414,39 @@ $(".guardarProducto").click(function(){
 				numero de imagenes seleccionadas  ======*/
 				var datosMultimedia = new FormData();
 				datosMultimedia.append("file", arrayFiles[i]);
-				datosMultimedia.append("ruta",$(".rutaProducto").val());
-
-				ajax({
+				datosMultimedia.append("ruta", $(".rutaProducto").val());
+				
+				$.ajax({
 					url:"ajax/productos.ajax.php",
 					method:"POST",
 					data: datosMultimedia,
 					cache: false,
 					contentType: false,
 					processData: false,
-					dataType: "json",
 					success:function(respuesta){
 
-							console.log("respuesta", respuesta);
+							/*Al array listaMultimendia se le añadira el dato foto
+							y con subst se quitaran los ../ ya que tendra un 3 como parametro
+							*/
+							listaMultimedia.push({"foto" : respuesta.substr(3)});
+
+							multimediaFisica = JSON.stringify(listaMultimedia);
+
+								if (multimediaFisica != null) {
+
+									$(".valorMultimedia").val(listaMultimedia);
+
+								}else{
+
+									swal({
+											title: "El campo multimedia no debe estar vacio",
+											type: "error",
+											confirmButtonText: "!Cerrar!"
+										});
+
+									return;
+								}
+
 					}
 
 				})
@@ -443,6 +465,91 @@ $(".guardarProducto").click(function(){
 
 		    return;
 		}
+
+		setTimeout(function(){
+
+								/*!!!ALMACENAMOS TODOS LOS CAMPOS DEL PRODUCTO*/
+
+								var tituloProducto = $(".tituloProducto").val();
+								var rutaProducto = $(".rutaProducto").val();
+								var seleccionarCategoria = $(".seleccionarCategoria").val();
+								var seleccionarSubCategoria = $(".seleccionarSubCategoria").val();
+								var descripcionProducto = $(".descripcionProducto").val();
+								var pClavesProducto = $(".pClavesProducto").val();
+								var precio = $(".precio").val();
+								var peso = $(".peso").val();
+								var entrega = $(".entrega").val();
+								var selActivarOferta = $(".selActivarOferta").val();
+								var precioOferta = $(".precioOferta").val();
+								var descuentoOferta = $(".descuentoOferta").val();
+								
+								var detalles = {"Medidas empaquetado": $(".detalleMempaquetado").tagsinput('items'),
+												"Material": $(".detalleMaterial").tagsinput('items'),
+												"Grado de terminacion": $(".detalleGradoT").tagsinput('items'),
+												"Pais": $(".detallePais").val(),
+												"Dimensiones": $(".detalleDimensiones").val(),
+												"Escala": $(".detalleEscala").val(),
+												"Version": $(".detalleVersion").val(),
+												"Marca": $(".detalleMarca").val(),
+												"Peso": $(".detallePeso").val()};
+								
+								var detallesString = JSON.stringify(detalles);
+
+								/*========================
+								con estos datos se mandan al ajax                   =
+								========================*/
+			
+								var datosProducto = new FormData();
+								datosProducto.append("tituloProducto",tituloProducto);
+								datosProducto.append("rutaProducto",rutaProducto);
+								datosProducto.append("detalles",detallesString);
+								datosProducto.append("seleccionarCategoria",seleccionarCategoria);
+								datosProducto.append("seleccionarSubCategoria",seleccionarSubCategoria);
+								datosProducto.append("descripcionProducto",descripcionProducto);
+								datosProducto.append("pClavesProducto",pClavesProducto);
+								datosProducto.append("precio",precio);
+								datosProducto.append("peso",peso);
+								datosProducto.append("entrega",entrega);
+								datosProducto.append("multimedia",multimediaFisica);
+								datosProducto.append("fotoPortada",imagenPortada);
+								datosProducto.append("fotoPrincipal",imagenFotoPrincipal);
+								datosProducto.append("selActivarOferta",selActivarOferta);
+								datosProducto.append("precioOferta",precioOferta);
+								datosProducto.append("descuentoOferta",descuentoOferta);
+								
+								$.ajax({
+									url:"ajax/productos.ajax.php",
+									method:"POST",
+									data: datosProducto,
+									cache: false,
+									contentType: false,
+									processData: false,
+									success:function(respuesta){
+
+
+										if(respuesta == "ok"){
+
+						swal({
+						  type: "success",
+						  title: "El producto ha sido guardado correctamente",
+						  showConfirmButton: true,
+						  confirmButtonText: "Cerrar"
+						  }).then(function(result){
+							if (result.value) {
+
+							window.location = "productos";
+
+							}
+						})
+					}
+
+				}
+
+
+								})
+
+
+							},1000)
 })
 
 /*=====  End of GUARDAR EL PRODUCTO  ======*/

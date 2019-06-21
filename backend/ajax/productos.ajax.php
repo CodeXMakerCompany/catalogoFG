@@ -25,11 +25,60 @@
  			$valor = $this->validarProducto;
 
  			$respuesta = ControladorProductos::ctrMostrarProductos($item, $valor);
- 			echo json_encode($respuesta);
+
+ 			echo $respuesta;
+
  		} 
  		
+ 		/*========================================
+ 		=            GUARDAR PRODUCTO           =
+ 		========================================*/
+
+ 		public $tituloProducto;
+ 		public $rutaProducto;
+ 		public $detalles;
+ 		public $seleccionarCategoria;
+ 		public $seleccionarSubCategoria;
+ 		public $descripcionProducto;
+ 		public $pClavesProducto;
+ 		public $precio;
+ 		public $peso;
+ 		public $entrega;
+ 		public $multimedia;
+ 		public $fotoPortada;
+ 		public $fotoPrincipal;
+ 		public $selActivarOferta;
+ 		public $precioOferta;
+ 		public $descuentoOferta;
+
+ 		public function ajaxCrearProducto(){
+
+ 			$datos = array(
+							"tituloProducto"=>$this->tituloProducto,
+							"rutaProducto"=>$this->rutaProducto,
+							"detalles"=>$this->detalles,
+							"categoria"=>$this->seleccionarCategoria,
+							"subCategoria"=>$this->seleccionarSubCategoria,
+							"descripcionProducto"=>$this->descripcionProducto,
+							"pClavesProducto"=>$this->pClavesProducto,
+							"precio"=>$this->precio,
+							"peso"=>$this->peso,
+							"entrega"=>$this->entrega,
+							"multimedia"=>$this->multimedia,
+							"fotoPortada"=>$this->fotoPortada,
+							"fotoPrincipal"=>$this->fotoPrincipal,
+							"selActivarOferta"=>$this->selActivarOferta,
+							"precioOferta"=>$this->precioOferta,
+							"descuentoOferta"=>$this->descuentoOferta
+							);
+
+ 			$respuesta = ControladorProductos::ctrCrearProducto($datos);
+
+ 			echo $respuesta;
+
+ 		}
+
  		
- 		/*=====  End of VALIDAR PRODUCTO  ======*/
  		
  		/*========================================
  		=      RECIBIR MULTIMEDIA   			=
@@ -46,7 +95,9 @@
  			$respuesta = ControladorProductos::ctrSubirMultimediaTemporal($datos, $ruta);
 
  			echo $respuesta;
+ 			
  		}
+
  	}
 
  	/*========================================
@@ -72,4 +123,50 @@
  					$multimedia -> rutaMultimedia = $_POST["ruta"];
  					$multimedia -> ajaxRecibirMultimedia();
  					
- 				}	
+ 				}
+/*========================================
+=      CREAR PRODUCTO                   =
+========================================*/
+
+if (isset($_POST["tituloProducto"])) {
+
+	 $producto = new AjaxProductos();
+	 $producto -> tituloProducto = $_POST["tituloProducto"];
+	 $producto -> rutaProducto = $_POST["rutaProducto"];
+	 $producto -> detalles = $_POST["detalles"];
+	 $producto -> seleccionarCategoria = $_POST["seleccionarCategoria"];
+	 $producto -> seleccionarSubCategoria = $_POST["seleccionarSubCategoria"];
+	 $producto -> descripcionProducto = $_POST["descripcionProducto"];
+	 $producto -> pClavesProducto = $_POST["pClavesProducto"];
+	 $producto -> precio = $_POST["precio"];
+	 $producto -> peso = $_POST["peso"];
+	 $producto -> entrega = $_POST["entrega"];
+	 $producto -> multimedia = $_POST["multimedia"];
+
+	 			if (isset($_FILES["fotoPortada"])) {
+	 				
+	 				$producto -> fotoPortada = $_FILES["fotoPortada"];
+
+	 			}else{
+
+	 				$producto -> fotoPortada = null;
+
+	 			}
+
+	 			if (isset($_FILES["fotoPrincipal"])) {
+	 				
+	 				$producto -> fotoPrincipal = $_FILES["fotoPrincipal"];
+
+	 			}else{
+
+	 				$producto -> fotoPrincipal = null;
+
+	 			}
+
+	 			$producto -> selActivarOferta = $_POST["selActivarOferta"];
+	 			$producto -> precioOferta = $_POST["precioOferta"];
+	 			$producto -> descuentoOferta = $_POST["descuentoOferta"];
+
+	 			$producto -> ajaxCrearProducto();
+
+ 					} 					

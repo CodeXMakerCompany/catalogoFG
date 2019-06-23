@@ -67,6 +67,18 @@ SLIDE
 	right:15%;*/
 }
 
+.textosSlide{
+	 top:10%; 
+	 left:10%; 
+	 width:40%;
+	 position:absolute;
+	font-family: 'Ubuntu Condensed', sans-serif;
+	font-size: 30px;
+	color: #FFFFFF;
+	text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #FF2D95 0px 0px 20px, #FF2D95 0px 0px 30px, #FF2D95 0px 0px 40px, #FF2D95 0px 0px 50px, #FF2D95 0px 0px 75px;
+	font-family: "Snell Roundhand", cursive, serif;
+}
+
 #slide .slideOpciones h1{	
 	text-transform: uppercase;
 	font-family: 'Ubuntu Condensed', sans-serif;

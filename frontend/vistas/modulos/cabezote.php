@@ -77,7 +77,7 @@ TOP
 				</ul>
 
 				<ul>
-					<li><h4 class="introTitle">  Catalogo de figuras by Codexmaker</h4></li>
+					<li><h4 class="introTitle">🖤BlackHeart-Shop💗</h4></li>
 				</ul>
 
 			</div>
@@ -241,9 +241,17 @@ HEADER
 				
 				</a>	
 
-				<p style="color: white;">TU CESTA <span class="cantidadCesta">3</span> <br> USD $ <span class="sumaCesta">20</span></p>	
+				<p style="color: white;">TU CESTA <span class="cantidadCesta">
+				<small>proximamente</small>
+
+					</span> <br> USD $ <span class="sumaCesta">
+
+					<small>proximamente</small>
+					
+					</span></p>	
 
 			</div>
+
 
 		</div>
 	</div>	

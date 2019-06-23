@@ -1,6 +1,7 @@
 <?php 
 	
 	$servidor = Ruta::ctrRutaServidor();
+	$url = Ruta::ctrRuta();
 
  ?>
 <!--=====================================
@@ -16,7 +17,8 @@ SLIDESHOW
 
 		<ul>
 
-			<?php 
+			<?php
+
 
 				$slide = ControladorSlide::ctrMostrarSlide();
 
@@ -35,17 +37,17 @@ SLIDESHOW
 					
 					<img class="imgProducto" src="'.$servidor.$value["imgProducto"].'" style="top:'.$estiloImgProducto["top"].'; right:'.$estiloImgProducto["right"].'; width:'.$estiloImgProducto["width"].'">
 
-					<div class="textosSlide" style="top:0%; left:10%; width:40%">
+					<div class="textosSlide animated bounceInLeft">
 						
 						<h1 style="color:'.$titulo1["color"].'">'.$titulo1["texto"].'</h1>
 
-						<h2 style="color:'.$titulo2["color"].'">'.$titulo2["texto"].'</h2>
+						<h2 style="color:'.$titulo2["color"].'">'.$titulo2["texto"].'💖</h2>
 
-						<a href="#">
+						<a href="'.$url.'lo-mas-visto">
 							
 							<button class="btn btn-default backColor text-uppercase">
 
-							VER PRODUCTO <span class="fa fa-chevron-right"></span>
+							VER MÁS <span class="fa fa-chevron-right"></span>
 
 							</button>
 

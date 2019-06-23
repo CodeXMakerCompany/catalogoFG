@@ -42,9 +42,21 @@ class ModeloProductos{
 	CREAR PRODUCTO
 	=============================================*/
 
+	
+
+	
+
+
+
 	static public function mdlIngresarProducto($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(id_categoria, id_subcategoria, ruta, titulo, titular, descripcion, multimedia, detalles, precio, portada, oferta, precioOferta, descuentoOferta, peso, entrega) VALUES (:id_categoria, :id_subcategoria, :ruta, :titulo, :titular, :descripcion, :multimedia, :detalles, :precio, :portada, :oferta, :precioOferta, :descuentoOferta, :peso, :entrega)");
+		/*====Añadir datos de vistas, ventas y nuevo =======*/
+
+		$vistas = 1;
+		$ventas = 0;
+		$nuevo = 1;
+
+		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(id_categoria, id_subcategoria, ruta, titulo, titular, descripcion, multimedia, detalles, precio, portada, oferta, precioOferta, descuentoOferta, peso, entrega, vistas, ventas, nuevo) VALUES (:id_categoria, :id_subcategoria, :ruta, :titulo, :titular, :descripcion, :multimedia, :detalles, :precio, :portada, :oferta, :precioOferta, :descuentoOferta, :peso, :entrega, :vistas, :ventas, :nuevo)");
 		/*enlace de datos*/
 		$stmt->bindParam(":id_categoria", $datos["idCategoria"], PDO::PARAM_STR);
 		$stmt->bindParam(":id_subcategoria", $datos["idSubCategoria"], PDO::PARAM_STR);
@@ -61,6 +73,10 @@ class ModeloProductos{
 		$stmt->bindParam(":descuentoOferta", $datos["descuentoOferta"], PDO::PARAM_STR);
 		$stmt->bindParam(":peso", $datos["peso"], PDO::PARAM_STR);
 		$stmt->bindParam(":entrega", $datos["entrega"], PDO::PARAM_STR);
+
+		$stmt->bindParam(":vistas",$vistas, PDO::PARAM_STR);
+		$stmt->bindParam(":ventas",$ventas, PDO::PARAM_STR);
+		$stmt->bindParam(":nuevo",$nuevo , PDO::PARAM_STR);
 
 		if($stmt->execute()){
 

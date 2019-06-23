@@ -125,8 +125,9 @@
 
 					    <a class="dropdown-item btnFacebook" href="#"><i class="fa fa-facebook"></i> Facebook</a>
 
-
 					  </div>
+					
+
 					</div>
 
 			</h6>
@@ -322,6 +323,8 @@
 
 				<div class="row botonesCompra">
 
+
+
 				<?php
 
 					
@@ -330,7 +333,13 @@
 
 							
 
-								echo '<button class="btn btn-default btn-block btn-lg backColor">SOLICITAR AHORA</button>';
+								echo '<button class="btn btn-default btn-block btn-lg backColor">
+
+								SOLICITAR AHORA
+
+								<br><small>Proximamente</small>
+
+								</button>';
 
 
 							echo '</div>';
@@ -342,7 +351,9 @@
 									
 									<button class="btn btn-default btn-block btn-lg backColor">
 
-									ADICIONAR AL CARRITO 
+									ADICIONAR AL CARRITO
+
+									<br><small>Proximamente</small> 
 
 									<i class="fa fa-shopping-cart"></i>
 

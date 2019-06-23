@@ -22,9 +22,9 @@ box-shadow: -15px 13px 16px 0px rgba(0,0,0,0.75);
 }
 
 .introTitle{
-	font-size: 30px;
-	color: #FFFFFF;
-	text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #FF2D95 0px 0px 20px, #FF2D95 0px 0px 30px, #FF2D95 0px 0px 40px, #FF2D95 0px 0px 50px, #FF2D95 0px 0px 75px;
+	font-size: 60px;
+	color: #D6188A;
+	text-shadow: #000000 0px 0px 5px, #000000 0px 0px 10px, #000000 0px 0px 15px, #FF2D95 0px 0px 20px, #FF2D95 0px 0px 30px, #FF2D95 0px 0px 40px, #FF2D95 0px 0px 50px, #FF2D95 0px 0px 75px;
 	font-family: "Snell Roundhand", cursive, serif;
 }
 

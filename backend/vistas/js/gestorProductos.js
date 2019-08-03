@@ -97,6 +97,7 @@ function limpiarUrl(texto){
 	texto = texto.replace(/[ó]/, 'o');
 	texto = texto.replace(/[ú]/, 'u');
 	texto = texto.replace(/[ñ]/, 'n');
+	texto = texto.replace(/ /g, "-");
 
 	return texto;
 }

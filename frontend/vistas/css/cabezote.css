@@ -142,6 +142,11 @@ ESCRITORIO GRANDE (LG revisamos en 1366px en adelante)
 
 @media (min-width:1200px){
 
+	.imgLogoAppear{
+		width: 50px;
+		display: none;
+	}
+
 	/*=============================================
 	HEADER
 	=============================================*/
@@ -162,7 +167,10 @@ ESCRITORIO MEDIANO O TABLET HORIZONTAL (MD revisamos en 1024px)
 =============================================*/
 
 @media (max-width:1199px) and (min-width:992px){
-
+	.imgLogoAppear{
+		width: 50px;
+		display: none;
+	}
 	/*=============================================
 	HEADER
 	=============================================*/
@@ -176,6 +184,11 @@ ESCRITORIO MEDIANO O TABLET HORIZONTAL (MD revisamos en 1024px)
 		padding-left:70px;
 	}
 
+	.imgLogoAppear{
+		width: 50px;
+		display: show;
+	}
+
 }
 
 /*=============================================
@@ -183,6 +196,11 @@ ESCRITORIO PEQUEÑO O TABLET VERTICAL (SM revisamos en 768px)
 =============================================*/
 
 @media (max-width:991px) and (min-width:768px){
+
+	.imgLogoAppear{
+		width: 50px;
+		display: none;
+	}
 
 	/*=============================================
 	HEADER
@@ -196,8 +214,6 @@ ESCRITORIO PEQUEÑO O TABLET VERTICAL (SM revisamos en 768px)
 	header #carrito{
 	margin:20px 0px;
 	}
-
-
 
 
 	header #logotipo img{
@@ -220,6 +236,24 @@ MOVIL (XS revisamos en 320px)
 
 @media (max-width:767px){
 
+	/*Titulo*/
+
+	.introTitle{
+		font-size: 22px;
+		text-align: center;
+	}
+
+	/*Logo*/
+
+	.imgLogo{
+		width: 50px;
+		display: none;
+	}
+	.imgLogoAppear{
+		width: 50px;
+		display: show;
+	}
+
 	/*=============================================
 	TOP
 	=============================================*/
@@ -227,7 +261,7 @@ MOVIL (XS revisamos en 320px)
 	header #buscador{
 	margin:20px 0px;
 	border-radius: 6px;
-}
+	}
 
 	#top ul{
 		text-align: center;
@@ -242,14 +276,7 @@ MOVIL (XS revisamos en 320px)
 		align-content: center;
 		padding-left: 40px;
 		margin: 2px;
-
 	}
-	
-
-
-
-
-
 
 	
 	/*=============================================

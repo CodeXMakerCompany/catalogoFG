@@ -9,6 +9,8 @@
         include "lateral/menu.php";
 
        ?>
+
+       
     </section>
     <!-- /.sidebar -->
   </aside>

@@ -76,11 +76,28 @@ TOP
 			
 				</ul>
 
-				<ul>
-					<li><h4 class="introTitle">🖤BlackHeart-Shop💗</h4></li>
-				</ul>
+				<div><h4 class="introTitle">🖤BlacHeart-Shop💗<?php 
+
+					$icono = ControladorPlantilla::ctrEstiloPlantilla();
+
+						
+						
+					echo '<a href="http://localhost/catalogoFig/frontend/">
+							<img src="'.$servidor.$icono["icono"].'" class="imgLogoAppear">
+									</a>'
+
+			
+
+					 ?></h4>
+				
+				</div>
 
 			</div>
+			
+			
+				
+					
+
 
 			<!--=====================================
 			Logo

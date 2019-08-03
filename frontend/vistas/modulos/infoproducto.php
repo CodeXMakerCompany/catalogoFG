@@ -263,16 +263,16 @@
 								<i class="fa fa-arrow-circle-up"></i> '.$detalles["Dimensiones"][0].'
 							</li>
 							<li>
-								<i class="fa fa-balance-scale"></i> '.$detalles["Escala"][0].'
+								<i class="fa fa-balance-scale"></i> '.$detalles["Escala"].'
 							</li>
 							<li>
-								<i class="fa fa-code-fork"></i> '.$detalles["Version"][0].'
+								<i class="fa fa-code-fork"></i> '.$detalles["Version"].'
 							</li>
 							<li>
-								<i class="fa fa-copyright"></i> '.$detalles["Marca"][0].'
+								<i class="fa fa-copyright"></i> '.$detalles["Marca"].'
 							</li>
 							<li>
-								<i class="fa fa-cube"></i> '.$detalles["Peso"][0].'
+								<i class="fa fa-cube"></i> '.$detalles["Peso"].'
 							</li>
 							<li>
 								<i class="fa fa-truck"></i> '.$detalles["Medidas empaquetado"][0].' x

@@ -4,10 +4,15 @@ SLIDE
 
 #slide{
 	position:relative;
-	margin:auto;
 	width:100%;
 	overflow: hidden;
 	padding-top:8px;
+}
+
+#slide{
+	margin-bottom:1px;
+	margin:0px;
+	padding: 0px;
 }
 
 #slide ul{
@@ -30,9 +35,10 @@ SLIDE
 }	
 
 #slide ul li img{
+	margin:0px;
+	padding: 0px; 	
 	width:100%;
 	height: 250px;
-	padding: 1.2%;
 }
 
 #slide .slideOpcion1 img{
@@ -322,23 +328,44 @@ MOVIL (XS revisamos en 320px)
 
 @media (max-width:767px){
 
+	/*Slide caja ajuste*/
+	#slide{
+	position:relative;
+	width:100%;
+	overflow: hidden;
+	padding-top:8px;
+	}
+	#slide{
+	margin-top:1px;
+	margin-bottom:1px;
+	}
+	/*Altura slide*/
+	#slide{
+		height: 230px;
+	}
+	/*Img adapatative*/
+	#slide #paginacion{
+	width:100%;
+	}
+
+
 	#slide #retroceder, #slide #avanzar{
 		display:none;
 	}
 
 	#slide .slideOpciones h1{			
-		font-size:15px;	
-		margin-top:5px;
-		margin-bottom:-20px;
+		font-size:25px;	
+		margin-top:0px;
+		margin-bottom:0px;
 	}
 
 	#slide .slideOpciones h2{			
-		display:none;	
+		font-size: 20px;
 	}
 
 	#slide .slideOpciones h3{	
 		font-size:10px;	
-		margin-bottom:-5px;
+		margin-bottom:0px;
 	}
 
 	#slide .slideOpciones button{

@@ -28,5 +28,7 @@
         <li class="header">MENU</li>
         <!-- Optionally, you can add icons to the links -->
         <li class="active"><a href="productos"><i class="fa fa-link"></i> <span>Gestor Productos</span></a></li>
+
+        <li><a href="calendario"><i class="fa fa-link"></i> <span>Calendario</span></a></li>
       </ul>
       <!-- /.sidebar-menu -->

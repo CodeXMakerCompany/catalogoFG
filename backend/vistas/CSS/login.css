@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+body{
+background-image: url('http://localhost/catalogoFig/backend/vistas/img/login/fondoLogin.jpg') !important;
+background-size: cover !important;
+background-repeat: no-repeat !important;
+font-family: 'Numans', sans-serif;
+}
+
+.login-box-msg{
+	color: white;
+	font-size: 30px;
+}
+
+/*Login*/
+.imgLogin{
+	height: 150px;
+	background-color: rgba(0,0,0,0.4) !important;
+	-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+
+.login-box{
+padding-top: 60px;
+height: auto;
+align-content: center;
+
+}
+
+.login-box-body{
+height: auto;
+margin-top: auto;
+margin-bottom: auto;
+width: auto;
+background-color: rgba(0,0,0,0.2) !important;
+-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+border-radius: 1rem;
+}
+
+.fields{
+	border-radius: 4px;
+}
+
+.social_icon span{
+font-size: 50px;
+margin-left: 10px;
+color: white;
+}
+
+.facebookS:hover{
+	transition: 0.3s;
+	color:#3b5998;
+}
+.instagramS:hover{
+	transition: 0.3s;
+	color: #854798;
+}
+.twitterS:hover{
+	transition: 0.3s;
+	color:#38A1F3;
+}
+
+.card-header h3{
+color: white;
+}
+
+.social_icon{
+position: absolute;
+right: 20px;
+top: -42px;
+}
+
+.input-group-prepend span{
+width: 50px;
+background-color: #33032F;
+color: white;
+border:0 !important;
+}
+
+input:focus{
+outline: 0 0 0 0  !important;
+box-shadow: 0 0 0 0 !important;
+
+}
+
+.remember{
+color: white;
+}
+
+.remember input
+{
+width: 20px;
+height: 20px;
+margin-left: 15px;
+margin-right: 5px;
+}
+
+.login_btn{
+color: white;
+background-color: #33032F;
+width: 100px;
+border-color: #33032F;
+}
+
+.login_btn:hover{
+transition: 0.3s;
+color: white;
+background-color: #1F7A8C;
+}
+
+.links{
+color: white;
+}
+
+.links a{
+margin-left: 4px;
+}
+

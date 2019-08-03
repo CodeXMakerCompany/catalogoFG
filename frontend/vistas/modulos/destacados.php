@@ -253,6 +253,7 @@ foreach ($modulos[$i] as $key => $value) {
       echo'
     </div>
 
+			<br>
 		    <!-- Add Pagination -->
 		    <div class="swiper-pagination"></div>
 		  </div>
@@ -271,5 +272,4 @@ foreach ($modulos[$i] as $key => $value) {
 		}
 
  ?>
-
 	

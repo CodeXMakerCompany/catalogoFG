@@ -107,6 +107,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     }
 
 
+    include_once 'modulos/footer.php';
+
     echo '</div>';
 
   }else{
@@ -121,6 +123,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <?php 
     
     include 'modals/modalsEvento.php';
+    include_once 'modals/modalsInversion.php';
 
  ?>
 
@@ -175,6 +178,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     });
   });
 </script>
+
+<script src="vistas/js/modalsEvents.js"></script>
  
 
 

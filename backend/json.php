@@ -5,6 +5,9 @@
 	$consulta = Conexion::conectar()->prepare("SELECT * FROM events");
 	$consulta -> execute();
 
+	$consulta2 = Conexion::conectar()->prepare("SELECT * FROM rentabilidad");
+	$consulta2 -> execute();
+
 	$accion = (isset($_GET['accion']))?$_GET['accion']:'leer';
 
 	switch ($accion) {
@@ -20,6 +23,7 @@
 	 		$nuevoTColor= $_POST['textColor'];
 	 		$inicio= $_POST['start'];
 	 		$salida= $_POST['ending'];
+
 
 
 	 		$instertSQL->bindParam(":title", $nuevoTitulo, PDO::PARAM_STR);
@@ -100,6 +104,32 @@
 
 	 		echo json_encode($editarSQL);
 	 		break;
+
+	 		case 'agregarInversion':
+
+	 		(int)$inversion = $_POST['inve'];
+
+	 		$editarInversionSQL = Conexion::conectar()->prepare("UPDATE rentabilidad SET inversion=inversion + $inversion
+	 				WHERE id=id");
+
+	 		
+
+	 		$editarInversionSQL->bindParam(":inversion", $inversion, PDO::PARAM_STR);
+	 		
+	 		if($editarInversionSQL->execute()){
+
+			return "ok";
+
+			}else{
+
+			return "error";
+		
+			}
+
+
+	 		echo json_encode($editarInversionSQL);
+
+	 			break;
 	 	
 	 	default:
 

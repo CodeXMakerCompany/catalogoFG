@@ -1066,3 +1066,39 @@ function editarMiProducto(imagen){
 	})
 	
 }
+
+/*=============================================
+ELIMINAR PRODUCTO
+=============================================*/
+
+$('.tablaProductos tbody').on("click", ".btnEliminarProducto", function(){
+
+
+  var idProducto = $(this).attr("idProducto");
+  var rutaCabecera = $(this).attr("rutaCabecera");
+  var imgPortada = $(this).attr("imgPortada");
+  var imgPrincipal = $(this).attr("imgPrincipal");
+
+  swal.fire({
+    title: '¿Está seguro de borrar el producto?',
+    text: "¡Si no lo está puede cancelar la accíón!",
+    type: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      cancelButtonText: 'Cancelar',
+      confirmButtonText: 'Si, borrar producto!'
+  }).then(function(result){
+
+    if(result.value){
+
+      window.location = "index.php?ruta=productos&idProducto="+idProducto+"&rutaCabecera="+rutaCabecera+"&imgPortada="+imgPortada+"&imgPrincipal="+imgPrincipal;
+
+    }
+
+  })
+
+
+
+
+})

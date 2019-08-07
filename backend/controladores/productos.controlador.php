@@ -606,4 +606,78 @@ class ControladorProductos{
 		
 	}
 
+		/*=============================================
+	ELIMINAR PRODUCTO
+	=============================================*/
+
+	static public function ctrEliminarProducto(){
+
+		if(isset($_GET["idProducto"])){
+
+			$datos = $_GET["idProducto"];
+
+			/*=============================================
+			ELIMINAR MULTIMEDIA
+			=============================================*/
+
+			$borrar = glob("vistas/img/multimedia/".$_GET["rutaCabecera"]."/*");
+
+				foreach($borrar as $file){
+
+					unlink($file);
+
+				}
+
+			rmdir("vistas/img/multimedia/".$_GET["rutaCabecera"]);
+
+			/*=============================================
+			ELIMINAR FOTO PRINCIPAL
+			=============================================*/
+
+			if($_GET["imgPrincipal"] != "" && $_GET["imgPrincipal"] != "vistas/img/productos/default/default.jpg"){
+
+				unlink($_GET["imgPrincipal"]);		
+
+			}
+
+			/*=============================================
+			ELIMINAR CABECERA
+			=============================================*/
+
+			if($_GET["imgPortada"] != "" && $_GET["imgPortada"] != "vistas/img/cabeceras/default/default.jpg"){
+
+				unlink($_GET["imgPortada"]);		
+
+			}
+
+			ModeloCabeceras::mdlEliminarCabecera("cabeceras", $_GET["rutaCabecera"]);
+
+			$respuesta = ModeloProductos::mdlEliminarProducto("productos", $datos);
+
+			if($respuesta == "ok"){
+
+				echo'<script>
+
+				swal.fire({
+					  type: "success",
+					  title: "El producto ha sido borrado correctamente",
+					  showConfirmButton: true,
+					  confirmButtonText: "Cerrar"
+					  }).then(function(result){
+								if (result.value) {
+
+								window.location = "productos";
+
+								}
+							})
+
+				</script>';
+
+			}		
+
+
+
+		}
+
+	}
 }

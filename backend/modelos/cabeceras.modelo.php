@@ -95,5 +95,31 @@ class ModeloCabeceras{
 		$stmt = null;
 
 	}
+
+	/*=============================================
+	ELIMINAR CABECERA
+	=============================================*/
+
+	static public function mdlEliminarCabecera($tabla, $datos){
+
+		$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE ruta = :ruta");
+
+		$stmt -> bindParam(":ruta", $datos, PDO::PARAM_INT);
+
+		if($stmt -> execute()){
+
+			return "ok";
+		
+		}else{
+
+			return "error";	
+
+		}
+
+		$stmt -> close();
+
+		$stmt = null;
+
+	}
 	
 }

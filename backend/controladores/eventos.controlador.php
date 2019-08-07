@@ -6,11 +6,11 @@ class ControladorEventos{
 	MOSTRAR NUMERO DE EVENTOS
 	=============================================*/
 
-	static public function ctrMostrarEventosHoy($item, $valor){
+	static public function ctrMostrarEventosHoy($item, $valor, $incioHoy, $finalHoy){
 
 		$tabla = "events";
 
-		$respuesta = ModeloEventos::mdlMostrarTotalEventosHoy($tabla, $item, $valor);
+		$respuesta = ModeloEventos::mdlMostrarTotalEventosHoy($tabla, $item, $valor, $incioHoy, $finalHoy);
 
 		return $respuesta;
 

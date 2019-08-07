@@ -8,9 +8,9 @@ class ModeloEventos{
 	MOSTRAR CATEGORIAS
 	=============================================*/
 
-	static public function mdlMostrarTotalEventosHoy($tabla, $item, $valor){
+	static public function mdlMostrarTotalEventosHoy($tabla, $item, $valor, $incioHoy, $finalHoy){
 
-		$stmt = Conexion::conectar()->prepare("SELECT count(id) as 'TotalEventos' FROM events WHERE start <= CURRENT_TIMESTAMP()");
+		$stmt = Conexion::conectar()->prepare("SELECT count(id) as 'TotalEventos' FROM events WHERE (START BETWEEN '$incioHoy' and '$finalHoy')");
 
 			$stmt -> execute();
 

@@ -19,8 +19,12 @@
           include_once 'inicio/boxes.php';
 
           include_once 'calendario.php';
+        
+        
           
-         ?>  
+    
+         ?> 
+        
 
 
 

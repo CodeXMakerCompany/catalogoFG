@@ -21,7 +21,11 @@
             $item = null;
                       $valor = null;
 
-          $eventosD = ControladorEventos::ctrMostrarEventosHoy($item, $valor);
+            /*Tiempos*/
+          date_default_timezone_set("America/Mexico_City");
+          $incioHoy = date('Y-m-d 00:00:00');
+          $finalHoy = date('Y-m-d 23:59:59');
+          $eventosD = ControladorEventos::ctrMostrarEventosHoy($item, $valor, $incioHoy, $finalHoy);
           $eventosT = ControladorEventos::ctrMostrarEventosTotal($item, $valor);
 
           ?>
